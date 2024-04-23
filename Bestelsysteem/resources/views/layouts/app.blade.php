@@ -19,44 +19,45 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white bg-gradient bg-opacity-25 shadow-sm">
-            <div class="">
-                {{-- <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Bestelsysteem') }}</a> --}}
+            <div class="col-md-12 col-6">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse d-md-flex d-none justify-content-evenly" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <div class="d-flex">
+                    <div class="d-flex col-md-3 col-0">
                         <img class="h-25 w-25 border border-opacity-75 shadow-sm rounded" src="https://cdn.discordapp.com/attachments/1204338336047697980/1230096062707007488/cow.png?ex=6632133b&is=661f9e3b&hm=08470be27fd0d1fefdcfff25ec492a510c009c27a6a5d8da6022bdcbd92f68d4&">
-                        <h4 class="ms-3 my-auto">Rik Bakker</h4>
+                        <h4 class="ms-2 my-auto">Rik Bakker</h4>
                     </div>
 
                     <!-- Middle Side Of Navar -->
-                    <img class="mx-auto w-25" href="{{ url('/') }}" src="https://cdn.discordapp.com/attachments/1204338336047697980/1230095705927061594/download.png?ex=663212e6&is=661f9de6&hm=8d33b1638a2e539c47a06540757333c01e895458e391fa5e1cc3f1df09c24869&">
+                    <a href="{{ url('/') }}" class="d-md-flex d-none"><img class="w-75 mx-auto" src="https://cdn.discordapp.com/attachments/1204338336047697980/1230095705927061594/download.png?ex=663212e6&is=661f9de6&hm=8d33b1638a2e539c47a06540757333c01e895458e391fa5e1cc3f1df09c24869&"></a>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item"> <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> </li>
-                            @endif
+                    <div class="text-white fw-semibold my-auto col-md-3 col-0 justify-content-end d-md-flex d-none">
+                        <ul class="list-unstyled d-flex flex-column my-auto col-3">
+                            <!-- Authentication Links -->
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="rounded bg-primary shadow-sm text-center mb-1 p-2"> <a class="nav-link" href="{{ route('login') }}">{{ __('Hulp') }}</a> </li>
+                                @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item"> <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                                @if (Route::has('register'))
+                                    <li class="rounded bg-white border shadow-sm text-black text-center mt-1 p-2"> <a class="nav-link" href="{{ route('register') }}">{{ __('Log uit') }}</a> </li>
+                                @endif
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
