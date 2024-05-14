@@ -9,16 +9,12 @@
 
     <title>{{ config('app.name', 'Bestelsysteem') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white bg-gradient bg-opacity-25 shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white border border-bottom shadow-sm">
             <div class="col-md-12 col-6">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,16 +30,16 @@
                     <a href="{{ url('/') }}" class="d-md-flex d-none"><img class="w-75 mx-auto" src="https://cdn.discordapp.com/attachments/1204338336047697980/1230095705927061594/download.png?ex=663212e6&is=661f9de6&hm=8d33b1638a2e539c47a06540757333c01e895458e391fa5e1cc3f1df09c24869&"></a>
 
                     <!-- Right Side Of Navbar -->
-                    <div class="text-white fw-semibold my-auto col-md-3 col-0 justify-content-end d-md-flex d-none">
+                    <div class="text-white fw-bold my-auto col-md-3 col-0 justify-content-end d-md-flex d-none">
                         <ul class="list-unstyled d-flex flex-column my-auto col-3">
                             <!-- Authentication Links -->
                             @guest
                                 @if (Route::has('login'))
-                                    <li class="rounded bg-primary shadow-sm text-center mb-1 p-2"> <a class="nav-link" href="{{ route('login') }}">{{ __('Hulp') }}</a> </li>
+                                    <li class="rounded bg-primary bg-opacity-75 border border-primary border-opacity-50 bg-gradient shadow-sm text-center mb-1 p-2"> <a class="nav-link" href="{{ route('login') }}">{{ __('Hulp') }}</a> </li>
                                 @endif
 
                                 @if (Route::has('register'))
-                                    <li class="rounded bg-white border shadow-sm text-black text-center mt-1 p-2"> <a class="nav-link" href="{{ route('register') }}">{{ __('Log uit') }}</a> </li>
+                                    <li class="rounded bg-white bg-gradient border shadow-sm text-black text-center mt-1 p-2"> <a class="nav-link" href="{{ route('register') }}">{{ __('Log uit') }}</a> </li>
                                 @endif
                             @else
                                 <li class="nav-item dropdown">
