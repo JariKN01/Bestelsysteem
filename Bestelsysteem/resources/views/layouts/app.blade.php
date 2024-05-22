@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Bestelsysteem') }}</title>
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/sass/order.css'])
 </head>
 <body>
     <div id="app">
@@ -22,12 +22,12 @@
                 <div class="collapse navbar-collapse d-md-flex d-none justify-content-evenly" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <div class="d-flex col-md-3 col-0">
-                        <img class="h-25 w-25 border border-opacity-75 shadow-sm rounded" src="https://cdn.discordapp.com/attachments/1204338336047697980/1230096062707007488/cow.png?ex=6632133b&is=661f9e3b&hm=08470be27fd0d1fefdcfff25ec492a510c009c27a6a5d8da6022bdcbd92f68d4&">
+                        <img class="h-25 w-25 border border-opacity-75 shadow-sm rounded" src="https://media.discordapp.net/attachments/1204338336047697980/1230096062707007488/cow.png?ex=664e6b7b&is=664d19fb&hm=990e03f5f7f2fd392d0633d4b056890d694497780973c0d62f3790c4f42416ff&=&format=webp&quality=lossless&width=500&height=500">
                         <h4 class="ms-2 my-auto">Rik Bakker</h4>
                     </div>
 
                     <!-- Middle Side Of Navar -->
-                    <a href="{{ url('/') }}" class="d-md-flex d-none"><img class="w-75 mx-auto" src="https://cdn.discordapp.com/attachments/1204338336047697980/1230095705927061594/download.png?ex=663212e6&is=661f9de6&hm=8d33b1638a2e539c47a06540757333c01e895458e391fa5e1cc3f1df09c24869&"></a>
+                    <a href="{{ url('/') }}" class="d-md-flex d-none"><img class="w-75 mx-auto" src="https://media.discordapp.net/attachments/1204338336047697980/1230095705927061594/download.png?ex=664e6b26&is=664d19a6&hm=8f2a3c825047272a0ec93c687894fde059ce4fa5d5e9487cc0dd0db6d11a76fe&=&format=webp&quality=lossless&width=752&height=268"></a>
 
                     <!-- Right Side Of Navbar -->
                     <div class="text-white fw-bold my-auto col-md-3 col-0 justify-content-end d-md-flex d-none">

@@ -1,0 +1,51 @@
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 200px; /* Adjust this value to your liking */
+    margin-right: 10px;
+}
+
+.form-group select {
+    flex-grow: 1;
+}
+
+h1 {
+    text-align: center;
+}
+
+.annuleren{
+    background-color: #e4e6eb;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.annuleren:hover{
+    background-color: #a0aec0;
+}
+
+.submit{
+    background-color: deepskyblue;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.submit:hover{
+    background-color: #007acc;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
