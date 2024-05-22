@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container col-10">
+    <div class="container col-9">
         <h1>Bestelformulier</h1>
     <form>
         <div class="form-group">
@@ -59,6 +59,56 @@
             <option value="kostencode3">Kostencode3</option>
         </select>
         </div>
+        <div class="form-group">
+        <label>Fio-route</label>
+        <select id="vraag8" class="form-select" aria-label="Default select example">
+            <option value="fio1">Fio1</option>
+            <option value="fio2">Fio2</option>
+            <option value="fio3">Fio3</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label>Bedrag</label>
+            <input type="text" class="form-control" id="vraag9">
+        </div>
+        <div class="form-group">
+            <label>Omschrijving</label>
+            <textarea class="form-control" id="vraag10" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="start">Start date:</label>
+            <input type="date" id="start" name="trip-start" />
+        </div>
+        <div class="form-group">
+            <label>Bedrag vermelden op de bestelbon?</label>
+            <input type="checkbox" id="ja" name="ja" value="ja">
+            <label for="ja">Ja</label>
+        </div>
+        <div class="form-group">
+            <label for="enterpriseSelect">Enterprise one:</label>
+            <select id="enterpriseSelect" name="enterpriseSelect">
+                <option value="yes">Ja</option>
+                <option value="no">Nee</option>
+            </select>
+        </div>
+        <div class="form-group" id="enterpriseAdress">
+            <label for="enterprise">Enterprise adresnummer:</label>
+            <div id="addressNumberField" class="show">
+                <input type="text" id="addressNumber" name="addressNumber">
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="leverancierField" class="hidden">
+                <label for="nameLeverancier">Naam Leverancier</label>
+                <input type="text" id="nameLeverancier" name="nameLeverancier">
+                <label for="adres">Adres</label>
+                <input type="text" id="address" name="address">
+                <label for="postcode">Postcode en woonplaats</label>
+                <input type="text" id="postcode" name="postcode">
+                <label>KVK-nummer (indien bekend)</label>
+                <input type="text" id="kvk" name="kvk">
+            </div>
+    </div>
         <div class="buttons">
         <button type="button" class="annuleren">Annuleren</button>
         <button type="submit" class="submit">Submit</button>
