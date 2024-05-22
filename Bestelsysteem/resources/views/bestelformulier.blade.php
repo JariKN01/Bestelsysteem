@@ -97,18 +97,16 @@
                 <input type="text" id="addressNumber" name="addressNumber">
             </div>
         </div>
-        <div class="form-group">
-            <div id="leverancierField" class="hidden">
-                <label for="nameLeverancier">Naam Leverancier</label>
-                <input type="text" id="nameLeverancier" name="nameLeverancier">
-                <label for="adres">Adres</label>
-                <input type="text" id="address" name="address">
-                <label for="postcode">Postcode en woonplaats</label>
-                <input type="text" id="postcode" name="postcode">
-                <label>KVK-nummer (indien bekend)</label>
-                <input type="text" id="kvk" name="kvk">
-            </div>
-    </div>
+        <div id="leverancierField" class="hidden form-group">
+            <label for="nameLeverancier">Naam Leverancier</label>
+            <input type="text" id="nameLeverancier" name="nameLeverancier">
+            <label for="adres">Adres</label>
+            <input type="text" id="address" name="address">
+            <label for="postcode">Postcode en woonplaats</label>
+            <input type="text" id="postcode" name="postcode">
+            <label>KVK-nummer (indien bekend)</label>
+            <input type="text" id="kvk" name="kvk">
+        </div>
         <div class="buttons">
         <button type="button" class="annuleren">Annuleren</button>
         <button type="submit" class="submit">Submit</button>
