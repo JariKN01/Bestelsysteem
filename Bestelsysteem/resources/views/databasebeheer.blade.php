@@ -12,10 +12,10 @@
                     <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2"><h4 class="my-1"> Kostenplaats </h4></li>
                 </ul>
             </div>
-            <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2"><h4 class="my-1"> Gebruikersbeheer </h4></li>
+            <div class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2"><h4 class="my-1"> Gebruikersbeheer </h4></div>
 
         </div>
-        <div name="bestellingsoverzicht" class="col-6 rounded p-3 bg-gradient bg-primary bg-opacity-25">
+        <div name="bestellingsoverzicht" class="col-7 rounded p-3 bg-gradient bg-primary bg-opacity-25">
             <h1 class="text-center mb-0 fw-semibold mb-2"> Kostenplaats </h1>
             <button type="button" class="btn btn-primary"> Zoekbalk </button>
             <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
@@ -49,7 +49,9 @@
                     <p class="mt-0 mb-0 col-4">1678901234</p>
                     <p class="mt-0 mb-0 col-4"></p>
                 </li>
+                <button type="button" class="btn btn-primary"> Opslaan </button>
             </ul>
+
         </div>
     </div>
 @endsection

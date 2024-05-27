@@ -18,7 +18,7 @@
             </ul>
         </div>
     </div>
-    <div name="bestellingsoverzicht" class="col-6 rounded p-3 bg-gradient bg-primary bg-opacity-25">
+    <div name="bestellingsoverzicht" class="col-7 rounded p-3 bg-gradient bg-primary bg-opacity-25">
         <h1 class="text-center mb-0 fw-semibold mb-2"> Bestellingen </h1>
         <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
             <li class="mx-auto col-12 col-sm-10 rounded d-flex justify-content-evenly">
