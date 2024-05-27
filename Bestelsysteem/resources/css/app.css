@@ -18,7 +18,7 @@ h1 {
     text-align: center;
 }
 
-.annuleren{
+.annuleren {
     background-color: #e4e6eb;
     width: 150px;
     height: 40px;
@@ -26,11 +26,11 @@ h1 {
     margin-right: 10px;
 }
 
-.annuleren:hover{
+.annuleren:hover {
     background-color: #a0aec0;
 }
 
-.submit{
+.submit {
     background-color: deepskyblue;
     width: 150px;
     height: 40px;
@@ -40,7 +40,7 @@ h1 {
     margin-left: 10px;
 }
 
-.submit:hover{
+.submit:hover {
     background-color: #007acc;
 }
 
