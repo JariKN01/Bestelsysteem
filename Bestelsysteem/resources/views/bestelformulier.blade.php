@@ -70,18 +70,20 @@
         <div class="form-group">
             <label>Bedrag</label>
             <input type="text" class="form-control" id="vraag9">
+            <input type="checkbox" id="vraag10" name="ja" value="ja">
+            <label for="ja">Ja</label>
         </div>
         <div class="form-group">
             <label>Omschrijving</label>
-            <textarea class="form-control" id="vraag10" rows="3"></textarea>
+            <textarea class="form-control" id="vraag11" rows="3"></textarea>
         </div>
         <div class="form-group">
             <label for="start">Start date:</label>
             <input type="date" id="start" name="trip-start" />
         </div>
         <div class="form-group">
-            <label>Bedrag vermelden op de bestelbon?</label>
-            <input type="checkbox" id="ja" name="ja" value="ja">
+            <label>Is er een contract?</label>
+            <input type="checkbox" id="contrat-ja" name="ja" value="ja">
             <label for="ja">Ja</label>
         </div>
         <div class="form-group">
