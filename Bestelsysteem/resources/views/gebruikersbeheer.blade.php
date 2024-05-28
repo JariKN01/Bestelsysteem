@@ -21,7 +21,11 @@
         </div>
         <div name="bestellingsoverzicht" class="col-8 rounded p-3 bg-gradient bg-primary bg-opacity-25">
             <h1 class="text-center mb-0 fw-semibold mb-2"> Gebruikers </h1>
-            <button type="button" class="btn btn-primary"> Zoekbalk</button>
+            <div class="col-12 d-flex justify-content-end">
+                <form class="form-inline">
+                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
             <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
                 <li class="mx-auto col-12 col-sm-10 rounded d-flex justify-content-evenly">
                     <h4 class="col-3 fw-semibold">Functie</h4>
