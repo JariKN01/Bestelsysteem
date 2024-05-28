@@ -5,10 +5,11 @@
             <div name="bestelknoppen" class="rounded p-3 bg-gradient bg-primary bg-opacity-25">
                 <h1 class="text-center fw-semibold"> Bestellen </h1>
                 <ul class="list-unstyled p-2">
-                    <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
-                        <h4 class="my-1">
-                            <a class="text-white" href="{{ route('bestelformulier') }}">Bestelling plaatsen</a></h4>
-                    </li>
+                    <a class="text-white text-decoration-none" href="{{ route('bestelformulier') }}">
+                        <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
+                            <h4 class="my-1">Bestelling plaatsen</h4>
+                        </li>
+                    </a>
                     <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
                         <h4 class="my-1"> Bestelling Herhalen</h4></li>
                     <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
@@ -18,12 +19,16 @@
             <div name="adminknoppen" class="rounded p-3 bg-gradient bg-primary bg-opacity-25 mt-5">
                 <h1 class="text-center fw-semibold"> Administrator </h1>
                 <ul class="list-unstyled p-2">
-                    <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 mb-1">
-                        <h4 class="my-1"><a class="text-white"
-                                            href="{{ route('gebruikersbeheer') }}">Gebruikersbeheer</a></h4></li>
-                    <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 mt-2">
-                        <h4 class="my-1"><a class="text-white" href="{{ route('databasebeheer') }}">Databasebeheer</a>
-                        </h4></li>
+                    <a class="text-white text-decoration-none"href="{{ route('gebruikersbeheer') }}">
+                        <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 mb-1">
+                            <h4 class="my-1">Gebruikersbeheer</h4>
+                        </li>
+                    </a>
+                    <a class="text-white text-decoration-none" href="{{ route('databasebeheer') }}">
+                        <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 mt-2">
+                            <h4 class="my-1">Databasebeheer</h4>
+                        </li>
+                    </a>
                 </ul>
             </div>
         </div>
