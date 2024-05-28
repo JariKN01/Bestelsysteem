@@ -11,8 +11,9 @@
                     <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 mb-2">
                         <h4 class="my-1"><a class="text-white" href="{{ route('afdeling') }}">
                                 Afdeling </a></h4></li>
-                    <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
-                        <h4 class="my-1"> Categorie </h4></li>
+                    <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 mb-2">
+                        <h4 class="my-1"><a class="text-white" href="{{ route('categorie') }}">
+                                Categorie </a></h4></li>
                     <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
                         <h4 class="my-1"> Budgethouders </h4></li>
                     <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
@@ -21,7 +22,7 @@
             </div>
             <div
                 class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
-                <h4 class="my-1"><a class="text-white" href="{{ route('databasebeheer') }}">Databasebeheer</a></h4>
+                <h4 class="my-1"><a class="text-white" href="{{ route('gebruikersbeheer') }}">Gebruikersbeheer</a></h4>
             </div>
 
         </div>
