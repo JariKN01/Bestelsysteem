@@ -54,15 +54,8 @@ h1 {
     display: none;
 }
 
-a:link {
-    text-decoration: none;
-}
-a:visited {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: none;
-}
-a:active {
-    text-decoration: none;
+li:hover{
+    transform: scale(1.005);
+    transition: all 400ms ease-in-out;
+    background-color: rgb(255,255,255,1);
 }
