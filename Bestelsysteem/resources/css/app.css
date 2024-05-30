@@ -54,8 +54,8 @@ h1 {
     display: none;
 }
 
-li:hover{
-    transform: scale(1.005);
-    transition: all 400ms ease-in-out;
+li:hover{ 
+    transform: scale(1.01);
+    transition: all 250ms ease-in;
     background-color: rgb(255,255,255,1);
 }
