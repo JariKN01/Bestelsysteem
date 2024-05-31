@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('routing_code');
             $table->string('beschrijving');
             $table->string('bedrijf');
-            $table->int('actief');
             $table->string('naam');
             $table->string('CatCd1');
             $table->boolean('actief');
