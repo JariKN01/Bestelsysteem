@@ -59,6 +59,7 @@
             <option value="kostencode3">Kostencode3</option>
         </select>
         </div>
+
         <div class="form-group">
         <label>Fio-route</label>
         <select id="vraag8" class="form-select" aria-label="Default select example">
@@ -67,12 +68,14 @@
             <option value="fio3">Fio3</option>
         </select>
         </div>
+
         <div class="form-group">
-            <label>Bedrag</label>
-            <input type="text" class="form-control" id="vraag9">
+            <label class="padding-left-10">Bedrag</label>
+            <input type="text" class="form-control"  id="vraag9">
             <input type="checkbox" id="vraag10" name="ja" value="ja">
-            <label for="ja">Ja</label>
+            <label for="ja">Bedrag vermelden</label>
         </div>
+
         <div class="form-group">
             <label>Omschrijving</label>
             <textarea class="form-control" id="vraag11" rows="3"></textarea>
@@ -114,6 +117,61 @@
         <button type="submit" class="submit">Submit</button>
         </div>
     </form>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="form-group">
+            <div class="col-3">
+                <label>Afdeling van budgethouder</label>
+            </div>
+            <div class="col-9">
+                <select id="vraag1" class="form-select" aria-label="Default select example">
+                    <option value="afdeling1">Afdeling1</option>
+                    <option value="afdeling2">Afdeling2</option>
+                    <option value="afdeling3">Afdeling3</option>
+                </select>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group">
+            <div class="col-3">
+                <label>Budgethouder</label>
+            </div>
+            <div class="col-9">
+                <select id="vraag2" class="form-select" aria-label="Default select example">
+                    <option value="budgethouder1">Budgethouder1</option>
+                    <option value="budgethouder2">Budgethouder2</option>
+                    <option value="budgethouder3">Budgethouder3</option>
+                </select>
+            </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="form-group">
+                <div class="col-3">
+                    <label class="padding-left-10">Bedrag</label>
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control"  id="vraag9">
+                </div>
+                <div class="col-1">
+                    <input type="checkbox" id="vraag10" name="ja" value="ja">
+                </div>
+                <div class="col-3">
+                    <label for="ja">Bedrag vermelden op pakbon</label>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 

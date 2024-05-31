@@ -7,6 +7,7 @@ use App\Http\Controllers\DatabasebeheerController;
 use App\Http\Controllers\GebruikersbeheerController;
 use App\Http\Controllers\AfdelingController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\BudgethoudersController;
 
 Route::get('/', function () {return view('home');})->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -18,3 +19,4 @@ Route::get('/gebruikersbeheer', [GebruikersbeheerController::class, 'index'])->n
 Route::get('/databasebeheer/afdeling', function () {return view('afdeling');})->name('afdeling');
 //Route::get('/categorie', [CategorieController::class, 'index'])->name('categorie');
 Route::get('/databasebeheer/categorie', function () {return view('categorie');})->name('categorie');
+Route::get('/budgethouders', [BudgethoudersController::class, 'index'])->name('budgethouders');
