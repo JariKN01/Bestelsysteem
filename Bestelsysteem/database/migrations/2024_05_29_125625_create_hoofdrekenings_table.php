@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hoofdrekenings', function (Blueprint $table) {
+
+            $table->unsignedInteger('economische_categories_id');
+
+            $table->foreign('economische_categories_id')->references('id')->on('economische_categories');
+
             $table->id();
             $table->string('hoofd_rekening', 8);
             $table->string('beschrijving');

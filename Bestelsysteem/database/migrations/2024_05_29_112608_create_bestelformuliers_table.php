@@ -13,25 +13,31 @@ return new class extends Migration
     {
         Schema::create('bestelformuliers', function (Blueprint $table) {
             $table->id();
-            $table->string('afdeling_budgethouder');
-            $table->string('budgethouder');
-            $table->string('betrekking');
-            $table->string('kostenplaats');
-            $table->string('kostensoort_categorie');
-            $table->string('kostensoort');
-            $table->string('kostencode');
-            $table->string('fio_route');
+
+            // Adding foreign key columns
+            $table->unsignedBigInteger('e1_rsp_kpl2018s_id');
+            $table->unsignedBigInteger('fio_routes_id');
+            $table->unsignedBigInteger('werkorders_id');
+            $table->unsignedBigInteger('adres_id');
+
+
+            // Adding foreign key constraints
+            $table->foreign('e1_rsp_kpl2018s_id')->references('id')->on('e1_rsp_kpl2018s');
+            $table->foreign('fio_routes_id')->references('id')->on('fio_routes');
+            $table->foreign('werkorders_id')->references('id')->on('werkorders');
+            $table->foreign('adres_id')->references('id')->on('adres');
+
             $table->double('bedrag');
-            $table->boolean('bedrag_vermelden');
-            $table->string('omschrijving');
+            $table->boolean('bedrag_bestelbon');
+            $table->string('korte_omschrijving');
             $table->date('leverdatum');
-            $table->string('contract');
-            $table->boolean('enterprise_one_exists');
             $table->string('enterprise_one_number');
             $table->string('naam_leverancier');
-            $table->string('adres');
-            $table->string('postcode_woonplaats');
+            $table->string('adres_leverancier');
+            $table->string('plaats_leverancier');
+            $table->string('postcode_leverancier');
             $table->string('kvk_nummer');
+            $table->string('omschrijving');
             $table->timestamps();
         });
     }

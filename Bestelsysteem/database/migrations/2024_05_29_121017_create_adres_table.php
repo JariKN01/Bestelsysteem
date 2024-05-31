@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('adres', function (Blueprint $table) {
+
+            $table->unsignedInteger('ga_orgs_id');
+
+            $table->foreign('ga_orgs_id')->references('id')->on('ga_orgs');
+
             $table->id();
             $table->string('naam');
             $table->string('adres');

@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fio_routes', function (Blueprint $table) {
+
+            $table->unsignedInteger('adres_id');
+
+            $table->foreign('adres_id')->references('id')->on('adres');
+
             $table->id();
             $table->string('routing_code');
             $table->string('beschrijving');

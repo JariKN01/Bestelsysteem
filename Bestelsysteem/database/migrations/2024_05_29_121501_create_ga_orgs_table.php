@@ -12,6 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ga_orgs', function (Blueprint $table) {
+
+            $table->unsignedInteger('afdelings_id');
+
+            $table->foreign('afdelings_id')->references('id')->on('afdelings');
+
             $table->id();
             $table->string('naam');
             $table->string('departement');
