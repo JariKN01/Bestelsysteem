@@ -90,14 +90,14 @@
                     <label class="col-2">Bedrag</label>
                 </div>
                 <input type="text" class="form-control me-2" id="vraag9">
-                <input type="checkbox" id="vraag10" name="ja" value="ja">
+                <input type="checkbox" id="vraag9" name="ja" value="ja">
                 <label class="ms-2" for="ja">Vermeld bedrag op bon</label>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label>Omschrijving</label>
                 </div>
-                <textarea class="form-control" id="vraag11" rows="3"></textarea>
+                <textarea class="form-control" id="vraag10" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label for="start">Leverdatum:</label>
@@ -112,42 +112,50 @@
                 <div class="col-2">
                     <label>Enterprise one</label>
                 </div>
-                <input class="ms-2" type="checkbox" id="yourBox" onclick="toggleInputs(this.checked)" />
+                <input class="ms-2" type="checkbox" id="vraag11" onclick="toggleInputs(this.checked)" />
                 <label class="ms-1" for="ja">Ja</label>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">Naam leverancier</label>
                 </div>
-            <input type="text" id="yourText1" /><br/>
+                <input type="text" id="leverancier" disabled /><br/>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">Adres</label>
                 </div>
-                <input type="text" id="yourText2" /><br/>
+                <input type="text" id="adres" disabled /><br/>
             </div>
             <div class="form-group">
                 <div class="col-2">
-                    <label class="col-2">Postcode en woonplaats</label>
+                    <label class="col-2">Postcode</label>
                 </div>
-                <input type="text" id="yourText3" /><br/>
+                <input type="text" id="postcode" disabled /><br/>
+            </div>
+            <div class="form-group">
+                <div class="col-2">
+                    <label class="col-2">Woonplaats</label>
+                </div>
+                <input type="text" id="woonplaats" disabled /><br/>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">KVK-nummer</label>
                 </div>
-                <input type="text" id="yourText4" /><br/>
+                <input type="text" id="kvknummer" disabled /><br/>
             </div>
 
             <script>
                 function toggleInputs(checked) {
-                    document.getElementById('yourText1').disabled = !checked;
-                    document.getElementById('yourText2').disabled = !checked;
-                    document.getElementById('yourText3').disabled = !checked;
-                    document.getElementById('yourText4').disabled = !checked;
+                    document.getElementById('leverancier').disabled = !checked;
+                    document.getElementById('adres').disabled = !checked;
+                    document.getElementById('postcode').disabled = !checked;
+                    document.getElementById('woonplaats').disabled = !checked;
+                    document.getElementById('kvknummer').disabled = !checked;
                 }
             </script>
+
             <div class="buttons">
                 <button type="button" class="annuleren">Annuleren</button>
                 <button type="submit" class="submit">Submit</button>
