@@ -30,8 +30,7 @@
                 </div>
 
                 <!-- Middle Side Of Navar -->
-                <a href="{{ url('/') }}" class="d-md-flex d-none"><img class="w-75 mx-auto"
-                                                                       src="https://media.discordapp.net/attachments/1204338336047697980/1230095705927061594/download.png?ex=664e6b26&is=664d19a6&hm=8f2a3c825047272a0ec93c687894fde059ce4fa5d5e9487cc0dd0db6d11a76fe&=&format=webp&quality=lossless&width=752&height=268"></a>
+                <a href="{{ url('/') }}" class="d-md-flex d-none"><img class="w-75 mx-auto" src="{{ asset('images/logo.png') }}"></a>
 
                 <!-- Right Side Of Navbar -->
                 <div class="text-white fw-bold my-auto col-md-3 col-0 justify-content-end d-md-flex d-none">
