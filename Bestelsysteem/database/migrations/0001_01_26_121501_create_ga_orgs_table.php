@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('adres', function (Blueprint $table) {
-
-            $table->unsignedInteger('ga_orgs_id');
-
-            $table->foreign('ga_orgs_id')->references('id')->on('ga_orgs');
-
+        Schema::create('ga_orgs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('afdelings_id');
             $table->string('naam');
-            $table->string('adres');
-            $table->string('postcode', 6);
-            $table->string('plaats');
+            $table->string('departement');
+            $table->string('titel');
+            $table->string('bedrijf');
             $table->timestamps();
+
+            $table->foreign('afdelings_id')->references('id')->on('afdelings')->onDelete('cascade');
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('adres');
+        Schema::dropIfExists('ga_orgs');
     }
 };

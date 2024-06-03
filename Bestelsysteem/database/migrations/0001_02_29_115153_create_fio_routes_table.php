@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fio_routes', function (Blueprint $table) {
 
-            $table->unsignedInteger('adres_id');
+            $table->unsignedBigInteger('adres_id');
 
             $table->foreign('adres_id')->references('id')->on('adres');
 

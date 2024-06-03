@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('logboeks', function (Blueprint $table) {
 
-            $table->unsignedInteger('bestelformuliers_id');
-            $table->unsignedInteger('ga_orgs_id');
+            $table->unsignedBigInteger('bestelformuliers_id');
+            $table->unsignedBigInteger('ga_orgs_id');
 
             $table->foreign('bestelformuliers_id')->references('id')->on('bestelformuliers');
             $table->foreign('ga_orgs_id')->references('id')->on('ga_orgs');

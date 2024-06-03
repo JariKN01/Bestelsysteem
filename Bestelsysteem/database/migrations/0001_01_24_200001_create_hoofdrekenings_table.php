@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('hoofdrekenings', function (Blueprint $table) {
 
-            $table->unsignedInteger('economische_categories_id');
+            $table->unsignedBigInteger('economische_categories_id');
 
             $table->foreign('economische_categories_id')->references('id')->on('economische_categories');
 

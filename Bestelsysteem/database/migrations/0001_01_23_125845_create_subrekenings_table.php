@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('subrekenings', function (Blueprint $table) {
-            $table->string('nummer')->primary();
+            $table->id();
+            $table->string('nummer');
             $table->string('description');
             $table->timestamps();
         });

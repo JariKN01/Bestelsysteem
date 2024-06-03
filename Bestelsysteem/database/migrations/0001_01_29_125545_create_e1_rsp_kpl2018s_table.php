@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('e1_rsp_kpl2018s', function (Blueprint $table) {
 
-            $table->unsignedInteger('kostenplaats_id');
-            $table->unsignedInteger('hoofdrekenings_id');
-            $table->unsignedInteger('subrekenings_id');
+            $table->unsignedBigInteger('kostenplaats_id');
+            $table->unsignedBigInteger('hoofdrekenings_id');
+            $table->unsignedBigInteger('subrekenings_id');
 
-            $table->foreign('kostenplaats_id')->references('id')->on('kostenplaats');
-            $table->foreign('hoofdrekenings_id')->references('id')->on('hoofdrekenings');
-            $table->foreign('subrekenings_id')->references('nummer')->on('subrekenings');
+            $table->foreign('kostenplaats_id')->references('id')->on('kostenplaats')->onDelete('cascade');
+            $table->foreign('hoofdrekenings_id')->references('id')->on('hoofdrekenings')->onDelete('cascade');
+            $table->foreign('subrekenings_id')->references('id')->on('subrekenings')->onDelete('cascade');
 
 
             $table->id();
