@@ -3,7 +3,6 @@
     <div class="container col-9">
         <h1>Bestelformulier</h1>
         <form>
-
             <div class="form-group">
                 <div class="col-2">
                     <label>Afdeling van budgethouder</label>
@@ -102,77 +101,56 @@
             </div>
             <div class="form-group">
                 <label for="start">Leverdatum:</label>
-                <input type="date" id="start" name="trip-start"/>
+                <input type="date" id="start" name="trip-start" class="ms-2"/>
             </div>
             <div class="form-group">
                 <label>Is er een contract?</label>
-                <input type="checkbox" id="contrat-ja" name="ja" value="ja">
-                <label class="ms-2" for="ja">Ja</label>
+                <input class="ms-2" type="checkbox" id="contract-ja" name="ja" value="ja">
+                <label class="ms-1" for="ja">Ja</label>
             </div>
-
-
-            <form id="registration-form"> Enter your name: <input type="text" id="name"></form>
-            <button onclick="disable()">Disable the text field</button>
-            <button onclick="enable()">Enable the text field</button>
-            <script> function disable() {
-                    document.getElementById("name").disabled = true;
-                }
-
-                function enable() {
-                    document.getElementById("name").disabled = false;
-                } </script>
-
-
-
-
             <div class="form-group">
+                <div class="col-2">
+                    <label>Enterprise one</label>
+                </div>
+                <input class="ms-2" type="checkbox" id="yourBox" onclick="toggleInputs(this.checked)" />
+                <label class="ms-1" for="ja">Ja</label>
+            </div>
+            <div class="form-group">
+                <div class="col-2">
+                    <label class="col-2">Naam leverancier</label>
+                </div>
+            <input type="text" id="yourText1" /><br/>
+            </div>
+            <div class="form-group">
+                <div class="col-2">
+                    <label class="col-2">Adres</label>
+                </div>
+                <input type="text" id="yourText2" /><br/>
+            </div>
+            <div class="form-group">
+                <div class="col-2">
+                    <label class="col-2">Postcode en woonplaats</label>
+                </div>
+                <input type="text" id="yourText3" /><br/>
+            </div>
+            <div class="form-group">
+                <div class="col-2">
+                    <label class="col-2">KVK-nummer</label>
+                </div>
+                <input type="text" id="yourText4" /><br/>
+            </div>
 
-                <label for="enterpriseSelect">Enterprise one:</label>
-                <select id="enterpriseSelect" name="enterpriseSelect">
-                    <option value="yes">Ja</option>
-                    <option value="no">Nee</option>
-                </select>
-            </div>
-            <div class="form-group" id="enterpriseAdress">
-                <label for="enterprise">Enterprise adresnummer:</label>
-                <div id="addressNumberField" class="show">
-                    <input type="text" id="addressNumber" name="addressNumber">
-                </div>
-            </div>
-            <div></div>
-            <div id="leverancierField" class="hidden form-group">
-                <div>
-                    <div class="col-2">
-                        <label for="nameLeverancier">Naam Leverancier</label>
-                    </div>
-                    {{--            <div class="col-10">--}}
-                    <input type="text" id="nameLeverancier" name="nameLeverancier">
-                    {{--            </div>--}}
-                </div>
-                <div class="col-2">
-                    <label for="adres">Adres</label>
-                </div>
-                <div class="col-10">
-                    <input type="text" id="address" name="address">
-                </div>
-                <div class="col-2">
-                    <label for="postcode">Postcode en woonplaats</label>
-                </div>
-                <input type="text" id="postcode" name="postcode">
-                <div class="col-2">
-                    <label>KVK-nummer (indien bekend)</label>
-                </div>
-                <input type="text" id="kvk" name="kvk">
-            </div>
+            <script>
+                function toggleInputs(checked) {
+                    document.getElementById('yourText1').disabled = !checked;
+                    document.getElementById('yourText2').disabled = !checked;
+                    document.getElementById('yourText3').disabled = !checked;
+                    document.getElementById('yourText4').disabled = !checked;
+                }
+            </script>
             <div class="buttons">
                 <button type="button" class="annuleren">Annuleren</button>
                 <button type="submit" class="submit">Submit</button>
             </div>
-
-
         </form>
 @endsection
-
-
-
-

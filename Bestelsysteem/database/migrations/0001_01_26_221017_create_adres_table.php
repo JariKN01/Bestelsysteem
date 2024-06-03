@@ -11,8 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('e1_rsp_kpl2018s', function (Blueprint $table) {
+        Schema::create('adres', function (Blueprint $table) {
+
+            $table->unsignedBigInteger('ga_orgs_id');
+
+            $table->foreign('ga_orgs_id')->references('id')->on('ga_orgs');
+
             $table->id();
+            $table->string('naam');
+            $table->string('adres');
+            $table->string('postcode', 6);
+            $table->string('plaats');
             $table->timestamps();
         });
     }
@@ -22,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('e1_rsp_kpl2018s');
+        Schema::dropIfExists('adres');
     }
 };

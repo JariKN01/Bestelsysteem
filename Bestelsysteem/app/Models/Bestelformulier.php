@@ -10,24 +10,20 @@ class Bestelformulier extends Model
     use HasFactory;
 
     protected $fillable = [
-        'afdeling_budgethouder',
-        'budgethouder',
-        'betrekking',
-        'kostenplaats',
-        'kostensoort_categorie',
-        'kostensoort',
-        'kostencode',
-        'fio_route',
+        'e1_rsp_kpl2018s_id',
+        'fio_route_id',
+        'werkorders_id',
+        'adres_id',
         'bedrag',
-        'bedrag_vermelden',
-        'omschrijving',
+        'bedrag_bestelbon',
+        'korte_omschrijving',
         'leverdatum',
-        'contract',
-        'enterprise_one_exists',
         'enterprise_one_number',
         'naam_leverancier',
-        'adres',
-        'postcode_woonplaats',
-        'kvk_nummer'
+        'adres_leverancier',
+        'plaats_leverancier',
+        'postcode_leverancier',
+        'kvk_nummer',
+        'omschrijving',
     ];
 }

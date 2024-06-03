@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fio_routes', function (Blueprint $table) {
+        Schema::create('hoofdrekenings', function (Blueprint $table) {
+
+            $table->unsignedBigInteger('economische_categories_id');
+
+            $table->foreign('economische_categories_id')->references('id')->on('economische_categories');
+
             $table->id();
-            $table->string('routing_code');
+            $table->string('hoofd_rekening', 8);
             $table->string('beschrijving');
-            $table->string('bedrijf');
-            $table->string('naam');
-            $table->string('CatCd1');
-            $table->boolean('actief');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fio_routes');
+        Schema::dropIfExists('hoofdrekenings');
     }
 };

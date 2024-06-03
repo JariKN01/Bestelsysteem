@@ -12,6 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('werkorders', function (Blueprint $table) {
+
+            $table->unsignedBigInteger('kostenplaats_id');
+            $table->unsignedBigInteger('subrekenings_id');
+
+            $table->foreign('kostenplaats_id')->references('id')->on('kostenplaats');
+            $table->foreign('subrekenings_id')->references('id')->on('subrekenings');
+
             $table->id();
             $table->integer('order_nummer');
             $table->string('omschrijving');
