@@ -33,38 +33,15 @@
                     <h4 class="col-3 fw-semibold">Email</h4>
                     <h4 class="col-3 fw-semibold">Acties</h4>
                 </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly mb-2">
-                    <p class="mt-0 mb-0 col-3">12/12/2022</p>
-                    <p class="mt-0 mb-0 col-3">1234567890</p>
-                    <p class="mt-0 mb-0 col-3">1234567890</p>
-                    <p class="mt-0 mb-0 col-3"></p>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-3">26/12/2022</p>
-                    <p class="mt-0 mb-0 col-3">1345678901</p>
-                    <p class="mt-0 mb-0 col-3">1234567890</p>
-                    <p class="mt-0 mb-0 col-3"></p>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-3">2/1/2023</p>
-                    <p class="mt-0 mb-0 col-3">1456789012</p>
-                    <p class="mt-0 mb-0 col-3">1234567890</p>
-                    <p class="mt-0 mb-0 col-3"></p>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-3">13/1/2023</p>
-                    <p class="mt-0 mb-0 col-3">1567890123</p>
-                    <p class="mt-0 mb-0 col-3">1234567890</p>
-                    <p class="mt-0 mb-0 col-3"></p>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-3">24/1/2023</p>
-                    <p class="mt-0 mb-0 col-3">1678901234</p>
-                    <p class="mt-0 mb-0 col-3">1234567890</p>
-                    <p class="mt-0 mb-0 col-3"></p>
-                </li>
+                @foreach($users as $user)
+                    <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
+                        <p class="mt-0 mb-0 col-3">{{ $user->role }}</p>
+                        <p class="mt-0 mb-0 col-3">{{ $user->name }}</p>
+                        <p class="mt-0 mb-0 col-3">{{ $user->email }}</p>
+                        <p class="mt-0 mb-0 col-3">{{ $user->created_at }}</p>
+                    </li>
+                @endforeach
             </ul>
-
         </div>
     </div>
 @endsection
