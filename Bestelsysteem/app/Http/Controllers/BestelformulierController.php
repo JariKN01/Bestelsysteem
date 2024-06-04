@@ -28,7 +28,42 @@ class BestelformulierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bestelformulier = new Bestelformulier; //Geen idee maar dit klopt toch?
+
+        // Add RSPKPL to the request
+        // $rspkpl = Rspkpl::
+    //                 where('kosten_plaats_id', $request->kostenplaats_naam) //Yep deze logica is questionable
+        //             ->where('hoofd_rekening_id', $request->kostensoort)
+        //             // ->where('sub_rekening_id', $request->vraag7) Waarom is deze commented
+        //             ->first();
+
+        // if ($request->vraag7 != "null") {
+        //     $rspkpl = $rspkpl->where('sub_rekening_id', $request->vraag7)->first();
+        // }
+        // $request->merge(['rspkpl_id' => $rspkpl->id]);
+
+        $bestelformulier->e1_rsp_kpl2018s_id = 1; // $request->input('kostenplaats'); //Dit moet uitgebreid worden om 3 vragen input te nemen
+        $bestelformulier->fio_routes_id = 1;
+        $bestelformulier->werkorders_id = 1;
+        $bestelformulier->adres_id = 1;
+        $bestelformulier->bedrag = (double)$request->input('bedrag');
+        $request->input('bedrag_bestelbon') ? $bestelformulier->bedrag_bestelbon = $request->input('bedrag_bestelbon') : $bestelformulier->bedrag_bestelbon = false;
+        // $bestelformulier->bedrag_bestelbon = $request->input('bedrag_bestelbon');
+        $bestelformulier->korte_omschrijving = $request->input('korte_omschrijving');
+        $bestelformulier->leverdatum = $request->input('leverdatum');
+        $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number');
+        $bestelformulier->naam_leverancier = $request->input('naam_leverancier');
+        $bestelformulier->adres_leverancier = $request->input('adres_leverancier');
+        $bestelformulier->plaats_leverancier = $request->input('plaats_leverancier');
+        $bestelformulier->postcode_leverancier = $request->input('postcode_leverancier');
+        $bestelformulier->kvk_nummer = $request->input('kvk_nummer');
+
+        // Hier nog alleen uitzoeken hoe je de ids krijgt via rskpl... we hebben de id's in html
+        // gewoon naar kolomnamen gezet voor gemak
+        // dd($bestelformulier);
+        $bestelformulier->save();
+
+        return redirect()->route('/');
     }
 
     /**
