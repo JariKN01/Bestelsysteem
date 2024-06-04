@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Adres extends Model
 {
     use HasFactory;
+
+    public function gaOrg()
+    {
+        return $this->belongsTo(GaOrg::class);
+    }
 }

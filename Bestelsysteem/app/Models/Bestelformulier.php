@@ -10,10 +10,13 @@ class Bestelformulier extends Model
     use HasFactory;
 
     protected $fillable = [
-        'e1_rsp_kpl2018s_id',
-        'fio_route_id',
-        'werkorders_id',
-        'adres_id',
+        'afdeling_naam',
+        'budgethouder_naam',
+        'kostenplaats_type',
+        'kostenplaats_naam',
+        'categorie_naam',
+        'kostensoort',
+        'kostencode',
         'bedrag',
         'bedrag_bestelbon',
         'korte_omschrijving',
@@ -26,4 +29,13 @@ class Bestelformulier extends Model
         'kvk_nummer',
         'omschrijving',
     ];
+
+    public function adres()
+    {
+        return $this->belongsTo(adres::class);
+    }
+
+    public function afdeling(){
+        return $this->hasOneThrough(Afdeling::class, GaOrg::class, 'id', 'afdeling_id');
+    }
 }
