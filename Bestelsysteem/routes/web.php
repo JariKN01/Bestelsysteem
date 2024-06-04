@@ -22,7 +22,5 @@ Route::get('/databasebeheer/afdeling', function () {return view('afdeling');})->
 Route::get('/databasebeheer/categorie', function () {return view('categorie');})->name('categorie');
 Route::get('/adres', function () {return view('adres');})->name('adres');
 
-Route::get('/gebruikersbeheer', [GebruikersBeheerController::class, 'index'])->name('users.index');
-
 //Route::get('/afdeling', [AfdelingController::class, 'index'])->name('afdeling');
 //Route::get('/categorie', [CategorieController::class, 'index'])->name('categorie');
