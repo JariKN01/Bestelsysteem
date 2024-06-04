@@ -100,50 +100,54 @@
                 <textarea class="form-control" id="vraag10" rows="3"></textarea>
             </div>
             <div class="form-group">
-                <label for="start">Leverdatum:</label>
-                <input type="date" id="start" name="trip-start" class="ms-2"/>
+                <div class="col-2">
+                    <label for="start">Leverdatum:</label>
+                </div>
+                <input type="date" id="start" name="trip-start" class=""/>
             </div>
             <div class="form-group">
-                <label>Is er een contract?</label>
-                <input class="ms-2" type="checkbox" id="contract-ja" name="ja" value="ja">
-                <label class="ms-1" for="ja">Ja</label>
+                <div class="col-2">
+                    <label>Is er een contract?</label>
+                </div>
+                <input class="" type="checkbox" id="contract-ja" name="ja" value="ja">
+                <label class="ms-2" for="ja">Ja</label>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label>Enterprise one</label>
                 </div>
-                <input class="ms-2" type="checkbox" id="vraag11" onclick="toggleInputs(this.checked)" />
-                <label class="ms-1" for="ja">Ja</label>
+                <input type="checkbox" id="vraag11" onclick="toggleInputs(this.checked)"/>
+                <label class="ms-2" for="ja">Ja</label>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">Naam leverancier</label>
                 </div>
-                <input type="text" id="leverancier" disabled /><br/>
+                <input type="text" id="leverancier" disabled/><br/>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">Adres</label>
                 </div>
-                <input type="text" id="adres" disabled /><br/>
+                <input type="text" id="adres" disabled/><br/>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">Postcode</label>
                 </div>
-                <input type="text" id="postcode" disabled /><br/>
+                <input type="text" id="postcode" disabled/><br/>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">Woonplaats</label>
                 </div>
-                <input type="text" id="woonplaats" disabled /><br/>
+                <input type="text" id="woonplaats" disabled/><br/>
             </div>
             <div class="form-group">
                 <div class="col-2">
                     <label class="col-2">KVK-nummer</label>
                 </div>
-                <input type="text" id="kvknummer" disabled /><br/>
+                <input type="text" id="kvknummer" disabled/><br/>
             </div>
 
             <script>
