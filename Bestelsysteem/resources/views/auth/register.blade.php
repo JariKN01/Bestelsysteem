@@ -65,9 +65,9 @@
                             <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
 
                             <div class="col-md-6">
-                                <select id="role" class="form-select @error('role') is-invalid @enderror" name="role" required autocomplete="role">
+                                <select id="role" class="form-select @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role">
                                     <option id="admin" value="admin">Admin</option>
-                                    <option id="besteller" value="besteller">besteller</option>
+                                    <option id="besteller" value="besteller" selected>besteller</option>
                                     <option id="budgethouder" value="budgethouder">Budgethouder</option>
                                     <option id="crediteur" value="crediteur">Crediteur</option>
                                 </select>
