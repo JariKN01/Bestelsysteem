@@ -188,22 +188,22 @@
                 <div class="col-5 text-end">
                     <label>KVK-nummer</label>
                 </div>
-                <input type="text" name="kvknummer" id="kvknummer" disabled/><br/>
+                <input type="text" name="kvk_nummer" id="kvk_nummer" disabled/><br/>
             </div>
 
             <script>
                 function toggleInputs(checked) {
-                    document.getElementById('naam_leverancier').disabled = !checked;
-                    document.getElementById('adres_leverancier').disabled = !checked;
-                    document.getElementById('postcode_leverancier').disabled = !checked;
-                    document.getElementById('plaats_leverancier').disabled = !checked;
-                    document.getElementById('kvknummer').disabled = !checked;
+                    document.getElementById('naam_leverancier').disabled = checked;
+                    document.getElementById('adres_leverancier').disabled = checked;
+                    document.getElementById('postcode_leverancier').disabled = checked;
+                    document.getElementById('plaats_leverancier').disabled = checked;
+                    document.getElementById('kvk_nummer').disabled = checked;
                 }
             </script>
 
             <div class="buttons my-2 mx-auto col-4">
-                <button type="button" class="rounded bg-white bg-opacity-75 col-4 border border-primary border-opacity-50 bg-gradient shadow-sm me-3 text-center p-2">Annuleren</button>
-                <button type="submit" class="text-white rounded bg-primary bg-opacity-75 col-4 border border-primary border-opacity-50 bg-gradient shadow-sm text-center p-2">Accepteren</button>
+                <button type="button" class="rounded bg-white bg-opacity-100 col-4 border border-primary border-opacity-50 bg-gradient shadow-sm me-3 text-center p-2"><b>Annuleren</b></button>
+                <button type="submit" class="text-white rounded bg-primary bg-opacity-75 col-4 border border-primary border-opacity-50 bg-gradient shadow-sm text-center p-2"><b>Accepteren</b></button>
             </div>
         </form>
 @endsection
