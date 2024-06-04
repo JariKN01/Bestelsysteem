@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', ['admin', 'besteller', 'budgethouder', 'crediteur']);
-            $table->boolean('budget_verificatie');
+            $table->boolean('budget_verificatie')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

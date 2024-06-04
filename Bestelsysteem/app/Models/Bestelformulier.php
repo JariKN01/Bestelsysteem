@@ -17,6 +17,7 @@ class Bestelformulier extends Model
         'categorie_naam',
         'kostensoort',
         'kostencode',
+        
         'bedrag',
         'bedrag_bestelbon',
         'korte_omschrijving',
@@ -26,8 +27,7 @@ class Bestelformulier extends Model
         'adres_leverancier',
         'plaats_leverancier',
         'postcode_leverancier',
-        'kvk_nummer',
-        'omschrijving',
+        'kvk_nummer'
     ];
 
     public function adres()

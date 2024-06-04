@@ -20,7 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('werkorders_id');
             $table->unsignedBigInteger('adres_id');
 
-
             // Adding foreign key constraints
             $table->foreign('e1_rsp_kpl2018s_id')->references('id')->on('e1_rsp_kpl2018s');
             $table->foreign('fio_routes_id')->references('id')->on('fio_routes');
@@ -28,16 +27,15 @@ return new class extends Migration
             $table->foreign('adres_id')->references('id')->on('adres');
 
             $table->double('bedrag');
-            $table->boolean('bedrag_bestelbon');
-            $table->string('korte_omschrijving');
-            $table->date('leverdatum');
+            $table->boolean('bedrag_bestelbon')->default(false);
+            $table->string('korte_omschrijving')->default('');
+            $table->date('leverdatum')->useCurrent();
             $table->string('enterprise_one_number');
             $table->string('naam_leverancier');
             $table->string('adres_leverancier');
             $table->string('plaats_leverancier');
             $table->string('postcode_leverancier');
             $table->string('kvk_nummer');
-            $table->string('omschrijving');
             $table->timestamps();
         });
     }
