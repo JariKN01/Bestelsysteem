@@ -10,6 +10,16 @@ class GaOrg extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'langNr',
+        'afdelings_id',
+        'naam',
+        'departement',
+        'titel',
+        'bedrijf',
+        'afdelings_id'
+    ];
+
     public function adres()
     {
         return $this->belongsTo(Adres::class,'langNr','GOARG_langNr');

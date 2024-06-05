@@ -9,6 +9,11 @@ class Subrekening extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nummer',
+        'description'
+    ];
+
     public function werkorder()
     {
         return $this->belongsTo(Werkorder::class);

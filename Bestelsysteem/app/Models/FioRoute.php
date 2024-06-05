@@ -10,7 +10,13 @@ class FioRoute extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'adres_id',
+        'routing_code',
+        'beschrijving',
+        'bedrijf',
+        'naam',
+        'CatCd1',
+        'actief'
     ];
 
     public function gaorg()

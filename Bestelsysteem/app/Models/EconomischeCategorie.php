@@ -10,7 +10,8 @@ class EconomischeCategorie extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'economische_categorie',
+        'beschrijving'
     ];
 
     public function hoofdrekening()

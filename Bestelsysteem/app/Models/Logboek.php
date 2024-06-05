@@ -9,6 +9,12 @@ class Logboek extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'bestelformuliers_id',
+        'ga_orgs_id',
+        'beschrijving'
+    ];
+
     public function bestelformulier()
     {
         return $this->belongsTo(Bestelformulier::class);
