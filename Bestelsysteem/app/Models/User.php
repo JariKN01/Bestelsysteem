@@ -21,6 +21,8 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'department',
+        'afdelings',
         'budget_verificatie'
     ];
 
@@ -50,5 +52,8 @@ class User extends Authenticatable
     public function gaOrg()
     {
         return $this->belongsTo(GaOrg::class, 'GOARG_langNr','langNr');
+    }
+    public function afdeling(){
+        return $this->belongsTo(Afdeling::class);
     }
 }

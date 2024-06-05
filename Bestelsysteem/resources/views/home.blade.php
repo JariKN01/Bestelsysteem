@@ -16,6 +16,7 @@
                         <h4 class="my-1"> Bestelling Hervatten </h4></li>
                 </ul>
             </div>
+            @if(Auth::user() && Auth::user()->role == 'admin')
             <div name="adminknoppen" class="rounded p-3 bg-gradient bg-primary bg-opacity-25 mt-5">
                 <h1 class="text-center fw-semibold"> Administrator </h1>
                 <ul class="list-unstyled p-2">
@@ -31,6 +32,7 @@
                     </a>
                 </ul>
             </div>
+            @endif
         </div>
         <div name="bestellingsoverzicht" class="col-7 rounded p-3 bg-gradient bg-primary bg-opacity-25">
             <h1 class="text-center mb-0 fw-semibold mb-2"> Bestellingen </h1>

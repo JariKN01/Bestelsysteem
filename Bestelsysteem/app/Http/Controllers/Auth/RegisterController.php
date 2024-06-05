@@ -52,7 +52,6 @@ class RegisterController extends Controller
             'GOARG_langNr' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role' => ['required', 'string', 'in:admin,besteller,budgethouder,crediteur'],
         ]);
     }
 
@@ -67,7 +66,6 @@ class RegisterController extends Controller
         return User::create([
             'GOARG_langNr' => $data['GOARG_langNr'],
             'email' => $data['email'],
-            'role' => $data['role'],
             'password' => Hash::make($data['password'],),
         ]);
     }
