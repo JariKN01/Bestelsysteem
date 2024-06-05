@@ -24,8 +24,7 @@
             <div class="collapse navbar-collapse d-md-flex d-none justify-content-evenly" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <div class="d-flex col-md-3 col-0">
-                    <img class="h-25 w-25 border border-opacity-75 rounded"
-                         src=" @if(Auth::check()) {{ asset('images/user.png') }} @endif">
+
                 </div>
 
                 <!-- Middle Side Of Navar -->
@@ -48,7 +47,7 @@
                             <li class="rounded bg-white bg-gradient border shadow-sm text-black text-center mt-1 p-2">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                   v-pre>{{ Auth::user()->name }}</a>
+                                   v-pre>{{ Auth::user()->role }}</a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
