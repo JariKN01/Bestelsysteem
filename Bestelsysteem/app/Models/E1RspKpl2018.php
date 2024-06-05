@@ -10,7 +10,9 @@ class E1RspKpl2018 extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'kostenplaats_id',
+        'hoofdrekenings_id',
+        'subrekenings_id'
     ];
 
     public function hoofdrekening()

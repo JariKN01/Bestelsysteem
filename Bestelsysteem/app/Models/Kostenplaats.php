@@ -10,6 +10,11 @@ class Kostenplaats extends Model
     use HasFactory;
 
     protected $fillable = [
+        'kostenplaats_type_id',
+        'ga_orgs_id',
+        'beschrijving',
+        'bkcd',
+        'gerelateerd'
 
     ];
 
