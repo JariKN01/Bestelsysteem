@@ -17,7 +17,7 @@ class AdresFactory extends Factory
     public function definition(): array
     {
         return [
-//            'ga_orgs_id' => $this->faker->randomDigitNotNull,
+            'ga_orgs_id' => 1,
             'naam' => fake()->name(),
             'adres' => fake()->address(),
             'postcode' => fake()->postcode(),

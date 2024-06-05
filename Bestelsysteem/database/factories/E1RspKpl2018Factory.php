@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Werkorder>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class WerkorderFactory extends Factory
+class E1RspKpl2018Factory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,17 +17,13 @@ class WerkorderFactory extends Factory
     public function definition(): array
     {
         $kostenplaatsId = \App\Models\Kostenplaats::all()->random()->id;
+        $hoofdrekeningId = \App\Models\Hoofdrekening::all()->random()->id;
         $subrekeningId = \App\Models\Subrekening::all()->random()->id;
 
         return [
             'kostenplaats_id' => $kostenplaatsId,
+            'hoofdrekenings_id' => $hoofdrekeningId,
             'subrekenings_id' => $subrekeningId,
-            'order_nummer' => $this->faker->randomNumber(),
-            'omschrijving' => $this->faker->sentence,
-            'status' => $this->faker->word,
-            'sub_gb_inactief' => $this->faker->word,
-            'cat2' => $this->faker->word,
-            'opmerking_status' => $this->faker->sentence,
         ];
     }
 }

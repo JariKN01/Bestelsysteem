@@ -17,9 +17,11 @@ class KostenplaatsFactory extends Factory
     public function definition(): array
     {
         return [
-            'code' => $this->fake->unique()->word,
-            'omschrijving' => $this->fake->sentence,
-            'opmerking' => $this->fake->sentence,
+            'kostenplaats_type_id' => 1,
+            'ga_orgs_id' => 1,
+            'beschrijving' => $this->faker->sentence,
+            'bkcd' => $this->faker->word,
+            'gerelateerd' => $this->faker->word,
         ];
     }
 }

@@ -17,6 +17,7 @@ class HoofdrekeningFactory extends Factory
     public function definition(): array
     {
         return [
+            'economische_categories_id' => 1,
             'hoofd_rekening' => $this->faker->unique()->regexify('[A-Za-z0-9]{8}'),
             'beschrijving' => $this->faker->sentence,
         ];

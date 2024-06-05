@@ -17,12 +17,6 @@ class GaOrgFactory extends Factory
     public function definition(): array
     {
         return [
-//            'ga_orgs_id' => $this->faker->unique()->regexify('[A-Za-z0-9]{8}'),
-//            'naam' => $this->faker->word,
-//            'departement' => $this->faker->word,
-//            'titel' => $this->faker->jobTitle,
-//            'bedrijf' => $this->faker->company,
-
             'afdelings_id' => $this->faker->randomDigitNotNull,
             'naam' => $this->faker->name,
             'departement' => $this->faker->word,

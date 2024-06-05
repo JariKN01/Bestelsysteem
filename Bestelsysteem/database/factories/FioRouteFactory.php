@@ -17,16 +17,13 @@ class FioRouteFactory extends Factory
     public function definition(): array
     {
         return [
-//            'adres_id' => $this->faker->randomDigitNotNull,
+            'adres_id' => 1,
             'routing_code' => fake()->postcode(),
             'beschrijving' => fake()->postcode(),
             'bedrijf' => fake()->postcode(),
             'naam' => fake()->postcode(),
             'CatCd1' => fake()->postcode(),
-//            'actief' => fake()->postcode(),
             'actief' => fake()->boolean,
-
-
         ];
     }
 }
