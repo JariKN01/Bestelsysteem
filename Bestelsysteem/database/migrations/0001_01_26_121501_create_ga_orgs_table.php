@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('ga_orgs', function (Blueprint $table) {
             $table->id();
+            $table->string('langNr');
             $table->unsignedBigInteger('afdelings_id');
             $table->string('naam');
             $table->string('departement');

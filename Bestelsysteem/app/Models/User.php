@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'GOARG_langNr',
         'email',
         'password',
         'role',
@@ -49,6 +49,6 @@ class User extends Authenticatable
 
     public function gaOrg()
     {
-        return $this->belongsTo(GaOrg::class);
+        return $this->belongsTo(GaOrg::class, 'GOARG_langNr','langNr');
     }
 }

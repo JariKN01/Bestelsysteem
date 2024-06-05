@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class EconomischeCategorie extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+
+    ];
+
+    public function hoofdrekening()
+    {
+        return $this->hasOne(Hoofdrekening::class,'conomische_categories_id','id');
+    }
 }
