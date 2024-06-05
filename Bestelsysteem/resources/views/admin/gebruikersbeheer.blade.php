@@ -32,17 +32,25 @@
             </div>
             <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
                 <li class="mx-auto col-12 col-sm-10 rounded d-flex justify-content-evenly">
-                    <h4 class="col-3 fw-semibold">Rol</h4>
-                    <h4 class="col-3 fw-semibold">Naam</h4>
-                    <h4 class="col-3 fw-semibold">Email</h4>
-                    <h4 class="col-3 fw-semibold">Geüpdatet</h4>
+                    <h4 class="col-2 fw-semibold">Rol</h4>
+                    <h4 class="col-2 fw-semibold">Naam</h4>
+                    <h4 class="col-2 fw-semibold">LangNr</h4>
+                    <h4 class="col-2 fw-semibold">Email</h4>
+                    <h4 class="col-2 fw-semibold">Geüpdatet</h4>
                 </li>
                 @forelse($users as $user)
-                    <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2" data-bs-toggle="modal" data-bs-target="#popup" id={{$user->id}}>
-                        <p class="mt-0 mb-0 col-3">{{ $user->role }}</p>
-                        <p class="mt-0 mb-0 col-3">{{ $user->name }}</p>
-                        <p class="mt-0 mb-0 col-3">{{ $user->email }}</p>
-                        <p class="mt-0 mb-0 col-3">{{ $user->updated_at }}</p>
+                    <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2 user-item" data-bs-toggle="modal" data-bs-target="#popup"
+                        data-user-id="{{ $user->id }}"
+                        data-user-role="{{ $user->role }}"
+                        data-user-name="{{ $user->name }}"
+                        data-user-langnr="{{ $user->GOARG_langNr }}"
+                        data-user-email="{{ $user->email }}"
+                        data-user-updated="{{ $user->updated_at }}">
+                        <p class="mt-0 mb-0 col-2">{{ $user->role }}</p>
+                        <p class="mt-0 mb-0 col-2">{{ $user->name }}</p>
+                        <p class="mt-0 mb-0 col-2">{{ $user->GOARG_langNr }}</p>
+                        <p class="mt-0 mb-0 col-2">{{ $user->email }}</p>
+                        <p class="mt-0 mb-0 col-2">{{ $user->updated_at }}</p>
                     </li>
                 @empty
                     <p>No users found for your search.</p>
@@ -52,17 +60,19 @@
     </div>
 
     <div class="modal fade" id="popup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered"> 
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="staticBackdropLabel">Gebruiker Aanpassen</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="popupuserdata">
-                    <p id="popupuserrole"></p>
-                    <p id="popupusername"></p>
-                    <p id="popupuseremail"></p>
-                    <p id="popupuserupdated"></p>
+                    <p><strong>Id: </strong><span id="popupuserid"></span></p>
+                    <p><strong>Role: </strong><span id="popupuserrole"></span></p>
+                    <p><strong>Name: </strong><span id="popupusername"></span></p>
+                    <p><strong>LangNr: </strong><span id="popupuserlangnr"></span></p>
+                    <p><strong>Email: </strong><span id="popupuseremail"></span></p>
+                    <p><strong>Updated At: </strong><span id="popupuserupdated"></span></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="rounded bg-white bg-gradient border shadow-sm text-black text-center p-2" data-bs-dismiss="modal">Annuleren</button>
