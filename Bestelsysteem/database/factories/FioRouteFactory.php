@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\FioRoute>
  */
-class Fio_routeFactory extends Factory
+class FioRouteFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,12 +17,16 @@ class Fio_routeFactory extends Factory
     public function definition(): array
     {
         return [
+//            'adres_id' => $this->faker->randomDigitNotNull,
             'routing_code' => fake()->postcode(),
             'beschrijving' => fake()->postcode(),
-            'bedrijf' => $faker->name,
-            'naam' => $faker->name,
+            'bedrijf' => fake()->postcode(),
+            'naam' => fake()->postcode(),
             'CatCd1' => fake()->postcode(),
-            'actief' => $faker->boolean,
+//            'actief' => fake()->postcode(),
+            'actief' => fake()->boolean,
+
+
         ];
     }
 }

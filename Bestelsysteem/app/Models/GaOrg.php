@@ -12,4 +12,6 @@ class GaOrg extends Model
     public function afdeling(){
         return $this->belongsTo(Afdeling::class);
     }
+
+    protected $fillable = ['name', 'afdeling_id'];
 }
