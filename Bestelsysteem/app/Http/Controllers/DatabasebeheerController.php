@@ -8,6 +8,6 @@ class DatabasebeheerController extends Controller
 {
     public function index()
     {
-        return view('databasebeheer');
+        return view('admin/databasebeheer');
     }
 }
