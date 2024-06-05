@@ -139,7 +139,7 @@
 
             <div class="form-group">
                 <div class="col-5 text-end">
-                    <label for="start">Leverdatum:</label>
+                    <label for="start">Leverdatum</label>
                 </div>
                 <input type="date" id="leverdatum" name="leverdatum" value="">
             </div>
@@ -154,45 +154,51 @@
             <hr>
             <div class="form-group">
                 <div class="col-5 text-end">
-                    <label>Bestaat in Enterprise One?</label>
+                    <label>Bestaat in EnterpriseOne?</label>
                 </div>
-                <input type="checkbox" name="enterprise_one_number"  id="enterprise_one_number" onclick="toggleInputs(this.checked)"/>
-                <label class="ms-2" for="enterprise_one_number">Ja</label>
+                <input type="checkbox" name="enterprise_one_exists"  id="enterprise_one_exists" checked onclick="toggleInputs(this.checked)"/>
+                <label class="ms-2" for="enterprise_one_exists">Ja</label>
             </div>
-            
+            <div class="form-group">
+                <div class="col-5 text-end">
+                    <label>EnterpriseOne Nummer</label>
+                </div>
+                <input type="text" name="enterprise_one_nummer" id="enterprise_one_nummer">
+            </div>
             <div class="form-group">
                 <div class="col-5 text-end">
                     <label>Naam leverancier</label>
                 </div>
-                <input type="text" name="naam_leverancier" id="naam_leverancier" disabled/><br/>
+                <input type="text" name="naam_leverancier" id="naam_leverancier" disabled/>
             </div>
             <div class="form-group">
                 <div class="col-5 text-end">
                     <label>Adres</label>
                 </div>
-                <input type="text" name="adres_leverancier" id="adres_leverancier" disabled/><br/>
+                <input type="text" name="adres_leverancier" id="adres_leverancier" disabled/>
             </div>
             <div class="form-group">
                 <div class="col-5 text-end">
                     <label>Postcode</label>
                 </div>
-                <input type="text" name="postcode_leverancier" id="postcode_leverancier" disabled/><br/>
+                <input type="text" name="postcode_leverancier" id="postcode_leverancier" disabled/>
             </div>
             <div class="form-group">
                 <div class="col-5 text-end">
                     <label>Woonplaats</label>
                 </div>
-                <input type="text" name="plaats_leverancier" id="plaats_leverancier" disabled/><br/>
+                <input type="text" name="plaats_leverancier" id="plaats_leverancier" disabled/>
             </div>
             <div class="form-group">
                 <div class="col-5 text-end">
                     <label>KVK-nummer</label>
                 </div>
-                <input type="text" name="kvk_nummer" id="kvk_nummer" disabled/><br/>
+                <input type="text" name="kvk_nummer" id="kvk_nummer" disabled/>
             </div>
 
             <script>
                 function toggleInputs(checked) {
+                    document.getElementById('enterprise_one_nummer').disabled = !checked;
                     document.getElementById('naam_leverancier').disabled = checked;
                     document.getElementById('adres_leverancier').disabled = checked;
                     document.getElementById('postcode_leverancier').disabled = checked;
