@@ -16,4 +16,7 @@ class Afdeling extends Model
     public function gaorg(){
         return $this->hasMany(GaOrg::class);
     }
+    public function bestelformulier(){
+        return $this->belongsTo(Bestelformulier::class);
+    }
 }
