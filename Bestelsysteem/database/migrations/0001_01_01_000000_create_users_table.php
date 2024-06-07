@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('GOARG_langNr')->constraint();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['admin', 'besteller', 'budgethouder', 'crediteur']);
+            $table->enum('role', ['admin', 'besteller', 'budgethouder', 'crediteur'])->default('besteller');
             $table->boolean('budget_verificatie')->default(false);
             $table->rememberToken();
             $table->timestamps();

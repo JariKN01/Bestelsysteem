@@ -9,6 +9,23 @@ class FioRoute extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['routing_code', 'beschrijving', 'bedrijf', 'naam', 'CatCd1', 'actief'];
+    protected $fillable = [
+        'adres_id',
+        'routing_code',
+        'beschrijving',
+        'bedrijf',
+        'naam',
+        'CatCd1',
+        'actief'
+    ];
 
+    public function gaorg()
+    {
+        return $this->hasOne(GaOrg::class,'langNr','GOARG_langNr');
+    }
+
+    public function bestelformulier()
+    {
+        return $this->belongsTo(Bestelformulier::class, 'fio_routes_id','id');
+    }
 }

@@ -9,5 +9,11 @@ class Afdeling extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'naam'
+    ];
+
+    public function gaorg(){
+        return $this->hasMany(GaOrg::class);
+    }
 }

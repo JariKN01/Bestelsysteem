@@ -32,6 +32,8 @@ class BestelformulierController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * 
+     * .
      */
     public function store(Request $request)
     {
@@ -58,16 +60,16 @@ class BestelformulierController extends Controller
         // $bestelformulier->bedrag_bestelbon = $request->input('bedrag_bestelbon');
         $bestelformulier->korte_omschrijving = $request->input('korte_omschrijving');
         $bestelformulier->leverdatum = $request->input('leverdatum');
-        $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number');
-        $bestelformulier->naam_leverancier = $request->input('naam_leverancier');
-        $bestelformulier->adres_leverancier = $request->input('adres_leverancier');
-        $bestelformulier->plaats_leverancier = $request->input('plaats_leverancier');
-        $bestelformulier->postcode_leverancier = $request->input('postcode_leverancier');
-        $bestelformulier->kvk_nummer = $request->input('kvk_nummer');
+        $request->input('enterpise_one_number') ? $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number') : $bestelformulier->enterprise_one_number = false;
+        $bestelformulier->naam_leverancier = "naam";//$request->input('naam_leverancier');
+        $bestelformulier->adres_leverancier = "adres";//$request->input('adres_leverancier');
+        $bestelformulier->plaats_leverancier = "plaats";//$request->input('plaats_leverancier');
+        $bestelformulier->postcode_leverancier = "postcode";//$request->input('postcode_leverancier');
+        $bestelformulier->kvk_nummer = "kvk nummer";//$request->input('kvk_nummer');
 
         // Hier nog alleen uitzoeken hoe je de ids krijgt via rskpl... we hebben de id's in html
         // gewoon naar kolomnamen gezet voor gemak
-        // dd($bestelformulier);
+         dd($bestelformulier);
         $bestelformulier->save();
 
         return redirect()->back();
