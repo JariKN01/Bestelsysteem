@@ -41,6 +41,7 @@ class UserFactory extends Factory
 //            'budget_verificatie' => $this->faker->boolean,
 //            'remember_token' => Str::random(10),
 
+
             'GOARG_langNr' => $this->faker->word,
             'afdelings_id' => $this->faker->word,
             'email' => $this->faker->unique()->safeEmail,
