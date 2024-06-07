@@ -1,2 +1,4 @@
 # Bestelsysteem
-Ons project voor Labs
+## Default admin
+admin@almere.nl
+secret
