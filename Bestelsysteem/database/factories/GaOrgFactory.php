@@ -20,8 +20,14 @@ class GaOrgFactory extends Factory
     public function definition(): array
     {
         return [
+//            'afdelings_id' => Afdeling::factory(),
+//            'naam' => $this->faker->name,
+//            'departement' => $this->faker->word,
+//            'titel' => $this->faker->jobTitle,
+//            'bedrijf' => $this->faker->company,
+            'langNr' => $this->faker->word,
             'afdelings_id' => Afdeling::factory(),
-            'naam' => $this->faker->name,
+            'naam' => $this->faker->company,
             'departement' => $this->faker->word,
             'titel' => $this->faker->jobTitle,
             'bedrijf' => $this->faker->company,
