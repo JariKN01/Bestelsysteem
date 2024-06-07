@@ -16,6 +16,7 @@ Route::get('/bestelformulier', function () {return view('bestelformulier');})->n
 Route::post('/bestelformulier/opslaan', [BestelformulierController::class, 'store'])->name('bestelformulier/opslaan');
 
 Route::get('/databasebeheer', [DatabasebeheerController::class, 'index'])->name('databasebeheer');
+Route::post('/databasebeheer/upload', [DatabasebeheerController::class, 'upload'])->name('databasebeheer/upload');
 Route::get('/gebruikersbeheer', [UserController::class, 'index'])->name('gebruikersbeheer');
 
 Route::get('/databasebeheer/afdeling', function () {return view('afdeling');})->name('afdeling');
