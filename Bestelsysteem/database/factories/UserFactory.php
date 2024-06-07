@@ -31,7 +31,18 @@ class UserFactory extends Factory
 //            'email_verified_at' => now(),
 //            'password' => static::$password ??= Hash::make('password'),
 //            'remember_token' => Str::random(10),
+
+
+//            'GOARG_langNr' => $this->faker->word,
+//            'email' => $this->faker->unique()->safeEmail,
+//            'email_verified_at' => now(),
+//            'password' => bcrypt('password'), // password
+//            'role' => $this->faker->randomElement(['admin', 'besteller', 'budgethouder', 'crediteur']),
+//            'budget_verificatie' => $this->faker->boolean,
+//            'remember_token' => Str::random(10),
+
             'GOARG_langNr' => $this->faker->word,
+            'afdelings_id' => $this->faker->word,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => bcrypt('password'), // password

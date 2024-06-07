@@ -29,10 +29,10 @@
             <h1 class="text-center mb-0 fw-semibold mb-2"> Gebruikers </h1>
             <div class="col-12 d-flex justify-content-end">
                 <form class="form-inline col-2 mb-2">
-                    <input id="zoekbalk" class="form-control" type="search" placeholder="Zoek">
+                    <input id="zoekbalk" class="form-control" type="search" placeholder="Zoek" onkeyup="searchUsers()">
                 </form>
             </div>
-            <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
+            <ul id="userList"class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
                 <li class="mx-auto col-12 col-sm-10 rounded d-flex justify-content-evenly">
                     <h4 class="col-2 fw-semibold">Rol</h4>
                     <h4 class="col-2 fw-semibold">LangNr</h4>
@@ -121,5 +121,28 @@
                     .catch(error => console.error('Error:', error));
             }
         });
+
+        function searchUsers() {
+            var input, filter, ul, li, p, i, txtValue;
+            input = document.getElementById('zoekbalk');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("userList");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                p = li[i].getElementsByTagName("p")[0]; // Assuming the first <p> element contains the user role
+                txtValue = p.textContent || p.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
     </script>
+{{--    @foreach($users as $user)--}}
+{{--        <li>--}}
+{{--            Department: {{ $user->gaorgs->naam }}--}}
+{{--        </li>--}}
+{{--    @endforeach--}}
 @endsection
