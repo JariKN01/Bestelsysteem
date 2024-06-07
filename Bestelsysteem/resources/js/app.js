@@ -75,24 +75,3 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('popupuseremail').value = userData.email;
     });
 });
-
-// document.getElementById('deleteUserBtn').addEventListener('click', function() {
-//     if (confirm('Are you sure you want to delete this user?')) {
-//         var userId = document.getElementById('popupuserid').value;
-//         fetch('/gebruikersbeheer/' + userId, {
-//             method: 'DELETE',
-//             headers: {
-//                 'X-CSRF-TOKEN': '{{ csrf_token() }}',
-//                 'Content-Type': 'application/json'
-//             },
-//         })
-//             .then(response => {
-//                 if (response.ok) {
-//                     // Redirect or handle success
-//                 } else {
-//                     // Handle error
-//                 }
-//             })
-//             .catch(error => console.error('Error:', error));
-//     }
-// });
