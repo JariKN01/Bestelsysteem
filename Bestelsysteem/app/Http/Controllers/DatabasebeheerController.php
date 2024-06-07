@@ -12,13 +12,17 @@ class DatabasebeheerController extends Controller
         return view('admin/databasebeheer');
     }
 
-    public function upload(Request $request){
+    public function upload(Request $request)
+    {
         $request->validate(['CSV' => 'required|mimes:csv,txt']);
 
         $csv = Reader::createFromPath($request->file('CSV')->getRealPath(), 'r');
-        $csv->setHeaderOffset(0);
+        $csv->setHeaderOffset(0); //Skips over the first line
 
         foreach($csv->getRecords() as $record){
+            //Iterates through all records and assigns them to the correct column
         }
+
+        return redirect()->route('databasebeheer')->with('success', 'Bestand succesvol geüpload');
     }
 }

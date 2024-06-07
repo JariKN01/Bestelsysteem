@@ -15,9 +15,7 @@ class BestelformulierController extends Controller
      */
     public function index()
     {
-//        $users = User::all(); // Fetches all users
-//        $users = User::where('role', 'budgethouder')->get();
-//        return view('bestelformulier', compact('users'));
+        //
     }
 
     /**
@@ -66,10 +64,11 @@ class BestelformulierController extends Controller
         $bestelformulier->plaats_leverancier = "plaats";//$request->input('plaats_leverancier');
         $bestelformulier->postcode_leverancier = "postcode";//$request->input('postcode_leverancier');
         $bestelformulier->kvk_nummer = "kvk nummer";//$request->input('kvk_nummer');
+        $bestelformulier->user_id = 1;
 
         // Hier nog alleen uitzoeken hoe je de ids krijgt via rskpl... we hebben de id's in html
         // gewoon naar kolomnamen gezet voor gemak
-         dd($bestelformulier);
+        // dd($bestelformulier);
         $bestelformulier->save();
 
         return redirect()->back();

@@ -7,7 +7,7 @@
                 <ul class="list-unstyled p-2">
                     <a class="text-white text-decoration-none" href="{{ route('bestelformulier') }}">
                         <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
-                            <h4 class="my-1">Bestelling plaatsen</h4>
+                            <h4 class="my-1">Bestelling Plaatsen</h4>
                         </li>
                     </a>
                     <li class="shadow shadow-bm rounded text-white border border-primary border-opacity-50 font-bold p-1 bg-primary bg-gradient bg-opacity-75 my-2">
@@ -34,20 +34,8 @@
             </div>
             @endif
         </div>
-        <div name="bestellingsoverzicht" class="col-7 rounded p-3 bg-gradient bg-primary bg-opacity-25">
-            <h1 class="text-center mb-0 fw-semibold mb-2"> Bestellingen </h1>
-            <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
-                <li class="mx-auto col-12 col-sm-10 rounded d-flex justify-content-evenly">
-                    <h4 class="col-4 fw-semibold">Datum</h4>
-                    <h4 class="col-4 fw-semibold">Bestelling</h4>
-                    <h4 class="col-4 fw-semibold">Status</h4>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly mb-2">
-                    <p class="mt-0 mb-0 col-4">12/12/2022</p>
-                    <p class="mt-0 mb-0 col-4">1234567890</p>
-                    <p class="mt-0 mb-0 col-4">Verzonden</p>
-                </li>
-            </ul>
+        <div class="col-7 rounded p-3 bg-gradient bg-primary bg-opacity-25">
+            @include('bestellingsoverzicht')
         </div>
     </div>
 @endsection

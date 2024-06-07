@@ -19,12 +19,14 @@ return new class extends Migration
             $table->unsignedBigInteger('fio_routes_id');
             $table->unsignedBigInteger('werkorders_id');
             $table->unsignedBigInteger('adres_id');
+            $table->unsignedBigInteger('user_id');
 
             // Adding foreign key constraints
             $table->foreign('e1_rsp_kpl2018s_id')->references('id')->on('e1_rsp_kpl2018s');
             $table->foreign('fio_routes_id')->references('id')->on('fio_routes');
             $table->foreign('werkorders_id')->references('id')->on('werkorders');
             $table->foreign('adres_id')->references('id')->on('adres');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->double('bedrag');
             $table->boolean('bedrag_bestelbon')->default(false);

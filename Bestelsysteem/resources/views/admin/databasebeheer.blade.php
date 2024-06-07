@@ -42,7 +42,7 @@
                 @method('POST')
                 <div class="input-group w-50 mx-auto">
                     <input type="file" class="form-control" id="file_input">
-                    <button class="btn btn-primary border border-primary border-opacity-50 bg-gradient shadow-sm text-center" type="submit" id="upload_knop">Upload</button>
+                    <button class="btn btn-primary border border-secondary border-opacity-25 bg-gradient shadow-sm text-center" type="submit" id="upload_knop">Upload</button>
                 </div>
             </form>
             {{-- <div class="col-12 d-flex justify-content-end">

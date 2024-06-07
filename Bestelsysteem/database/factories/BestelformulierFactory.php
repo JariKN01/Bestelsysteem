@@ -21,6 +21,7 @@ class BestelformulierFactory extends Factory
             'fio_routes_id' => $this->faker->randomNumber(2),
             'werkorders_id' => $this->faker->randomNumber(2),
             'adres_id' => $this->faker->randomNumber(2),
+            'user_id' => $this->faker->randomNumber(2),
             'bedrag' => $this->faker->randomNumber(6),
             'bedrag_bestelbon' => $this->faker->boolean(),
             'korte_omschrijving' => $this->faker->sentence(25),

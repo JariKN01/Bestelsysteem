@@ -24,32 +24,42 @@ class Bestelformulier extends Model
         'adres_leverancier',
         'plaats_leverancier',
         'postcode_leverancier',
-        'kvk_nummer'
+        'kvk_nummer',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 
     public function adres()
     {
-        return $this->belongsTo(adres::class);
+        return $this->hasOne(Adres::class);
     }
 
     public function werkorder(){
         return $this->hasOne(Werkorder::class);
     }
 
-    public function fioRoute(){
-        return $this->hasOne(FioRoute::class,'id','fio_routes_id');
-    }
-
+    
     public function logBoek()
     {
         return $this->hasMany(Logboek::class);
     }
 
-    public function rspkpl(){
+    public function fioRoute()
+    {
+        return $this->hasOne(FioRoute::class,'id','fio_routes_id');
+    }
+
+    public function rspkpl()
+    {
         return $this->hasOne(E1RspKpl2018::class,'id','e1_rsp_kpl2018s_id');
     }
 
-    public function afdeling(){
+    public function afdeling()
+    {
         return $this->hasOneThrough(Afdeling::class, GaOrg::class, 'id', 'afdeling_id');
     }
 }

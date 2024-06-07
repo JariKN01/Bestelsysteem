@@ -14,6 +14,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/bestelformulier', [BestelformulierController::class, 'create'])->name('bestelformulier');
 //Route::get('/bestelformulier', function () {return view('bestelformulier');})->name('bestelformulier');
 Route::post('/bestelformulier/opslaan', [BestelformulierController::class, 'store'])->name('bestelformulier/opslaan');
+Route::get('/bestellingsoverzicht', [BestelformulierController::class, 'index'])->name('bestellingsoverzicht');
 
 Route::get('/databasebeheer', [DatabasebeheerController::class, 'index'])->name('databasebeheer');
 Route::post('/databasebeheer/upload', [DatabasebeheerController::class, 'upload'])->name('databasebeheer/upload');
