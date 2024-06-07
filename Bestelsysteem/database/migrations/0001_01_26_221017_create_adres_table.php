@@ -20,7 +20,7 @@ return new class extends Migration
             $table->id();
             $table->string('naam');
             $table->string('adres');
-            $table->string('postcode', 6);
+            $table->string('postcode');
             $table->string('plaats');
             $table->timestamps();
         });

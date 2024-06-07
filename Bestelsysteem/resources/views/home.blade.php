@@ -47,26 +47,6 @@
                     <p class="mt-0 mb-0 col-4">1234567890</p>
                     <p class="mt-0 mb-0 col-4">Verzonden</p>
                 </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-4">26/12/2022</p>
-                    <p class="mt-0 mb-0 col-4">1345678901</p>
-                    <p class="mt-0 mb-0 col-4">Afgerond</p>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-4">2/1/2023</p>
-                    <p class="mt-0 mb-0 col-4">1456789012</p>
-                    <p class="mt-0 mb-0 col-4">Afgekeurd</p>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-4">13/1/2023</p>
-                    <p class="mt-0 mb-0 col-4">1567890123</p>
-                    <p class="mt-0 mb-0 col-4">Lopend</p>
-                </li>
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2">
-                    <p class="mt-0 mb-0 col-4">24/1/2023</p>
-                    <p class="mt-0 mb-0 col-4">1678901234</p>
-                    <p class="mt-0 mb-0 col-4">Verwijderd</p>
-                </li>
             </ul>
         </div>
     </div>

@@ -36,13 +36,21 @@
 
         </div>
         <div name="bestellingsoverzicht" class="col-7 rounded p-3 bg-gradient bg-primary bg-opacity-25">
-            <h1 class="text-center mb-0 fw-semibold mb-2"> Kostenplaats </h1>
-            <div class="col-12 d-flex justify-content-end">
+            <h1 class="text-center mb-0 fw-semibold mb-2"> CSV Bestand Uploaden </h1>
+            <form action="{{route('databasebeheer/upload')}}" method="POST">
+                @csrf
+                @method('POST')
+                <div class="input-group w-50 mx-auto">
+                    <input type="file" class="form-control" id="file_input">
+                    <button class="btn btn-primary border border-primary border-opacity-50 bg-gradient shadow-sm text-center" type="submit" id="upload_knop">Upload</button>
+                </div>
+            </form>
+            {{-- <div class="col-12 d-flex justify-content-end">
                 <form class="form-inline col-2 mb-2">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                 </form>
-            </div>
-            <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
+            </div> --}}
+            {{-- <ul class="bg-white bg-gradient shadow shadow-sm border border-opacity-25 rounded list-unstyled p-2 text-center">
                 <li class="mx-auto col-12 col-sm-10 rounded d-flex justify-content-evenly">
                     <h4 class="col-4 fw-semibold">Datum</h4>
                     <h4 class="col-4 fw-semibold">Bestelling</h4>
@@ -74,7 +82,7 @@
                     <p class="mt-0 mb-0 col-4"></p>
                 </li>
                 <button type="button" class="fw-bold rounded bg-primary bg-opacity-75 border border-primary border-opacity-50 bg-gradient shadow-sm text-center text-white p-2">Opslaan</button>
-            </ul>
+            </ul> --}}
 
         </div>
     </div>
