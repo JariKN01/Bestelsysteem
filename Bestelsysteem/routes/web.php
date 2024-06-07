@@ -17,10 +17,16 @@ Route::post('/bestelformulier/opslaan', [BestelformulierController::class, 'stor
 
 Route::get('/databasebeheer', [DatabasebeheerController::class, 'index'])->name('databasebeheer');
 Route::get('/gebruikersbeheer', [UserController::class, 'index'])->name('gebruikersbeheer');
+Route::get('/gebruikersbeheer/create', [UserController::class, 'create'])->name('user.create');
+Route::post('/gebruikersbeheer', [UserController::class, 'store'])->name('users.store');
+
 
 Route::get('/databasebeheer/afdeling', function () {return view('afdeling');})->name('afdeling');
 Route::get('/databasebeheer/categorie', function () {return view('categorie');})->name('categorie');
 Route::get('/adres', function () {return view('adres');})->name('adres');
+
+Route::put('/gebruikersbeheer/update', [UserController::class, 'update'])->name('users.update');
+Route::delete('/gebruikersbeheer/{id}', [UserController::class, 'delete'])->name('users.delete');
 
 //Route::get('/afdeling', [AfdelingController::class, 'index'])->name('afdeling');
 //Route::get('/categorie', [CategorieController::class, 'index'])->name('categorie');
