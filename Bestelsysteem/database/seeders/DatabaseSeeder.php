@@ -41,5 +41,9 @@ class DatabaseSeeder extends Seeder
         Kostenplaats::factory(10)->create();
         Werkorder::factory(10)->create();
         E1RspKpl2018::factory(10)->create();
+
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }
