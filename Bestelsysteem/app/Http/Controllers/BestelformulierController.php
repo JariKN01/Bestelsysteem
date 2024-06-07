@@ -29,8 +29,8 @@ class BestelformulierController extends Controller
     public function create()
     {
         // Must join users and ga_orgs table to get role + name + id
-        // $budgethouders = User::where('role', "budgethouder")->get();
-        $budgethouders = User::join('GaOrgs', 'Users.GOARG_langNr', '=', 'GaOrgs.langNr')->get();
+        // $budgethouders = User::join('GaOrgs', 'Users.GOARG_langNr', '=', 'GaOrgs.langNr')->get();
+        $budgethouders = User::where('role', "budgethouder")->get();
         $afdelingen = Afdeling::all();
         $kostenplaatstypes = KostenplaatsType::all();
         $kostenplaatsen = Kostenplaats::all();
