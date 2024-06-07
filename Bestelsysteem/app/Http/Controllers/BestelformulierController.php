@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Afdeling;
 use App\Models\Bestelformulier;
+use App\Models\E1RspKpl2018;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BestelformulierController extends Controller
@@ -12,7 +15,9 @@ class BestelformulierController extends Controller
      */
     public function index()
     {
-        //
+//        $users = User::all(); // Fetches all users
+//        $users = User::where('role', 'budgethouder')->get();
+//        return view('bestelformulier', compact('users'));
     }
 
     /**
@@ -20,7 +25,9 @@ class BestelformulierController extends Controller
      */
     public function create()
     {
-        return view('bestelformulier');
+        $users = User::all(); // Fetches all users
+        $afdelingen = Afdeling::all();
+        return view('bestelformulier', compact('afdelingen','users'));
     }
 
     /**
@@ -63,7 +70,7 @@ class BestelformulierController extends Controller
         // dd($bestelformulier);
         $bestelformulier->save();
 
-        return redirect()->route('/');
+        return redirect()->back();
     }
 
     /**

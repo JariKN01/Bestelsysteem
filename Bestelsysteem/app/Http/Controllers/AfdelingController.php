@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bestelformulier;
+use App\Models\Afdeling;
 use Illuminate\Http\Request;
 
 class AfdelingController extends Controller
 {
     public function index()
     {
-        return view('afdeling');
+//        $afdelings = Afdeling::all();
+
+//        return view('bestelformulier', compact('afdelings'));
     }
 }

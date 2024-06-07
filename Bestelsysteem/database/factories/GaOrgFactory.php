@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Afdeling;
+use App\Models\GaOrg;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class GaOrgFactory extends Factory
 {
+    protected $model = GaOrg::class;
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,7 @@ class GaOrgFactory extends Factory
     public function definition(): array
     {
         return [
-            'afdelings_id' => $this->faker->randomDigitNotNull,
+            'afdelings_id' => Afdeling::factory(),
             'naam' => $this->faker->name,
             'departement' => $this->faker->word,
             'titel' => $this->faker->jobTitle,
