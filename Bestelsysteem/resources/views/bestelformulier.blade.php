@@ -10,9 +10,9 @@
                 </div>
                 <div class="col-5">
                     <select name="afdeling_naam" id="afdeling_naam" class="form-select" aria-label="Default select example">
-                        <option value="afdeling1">Afdeling1</option>
-                        <option value="afdeling2">Afdeling2</option>
-                        <option value="afdeling3">Afdeling3</option>
+                        @foreach($afdelingen as $afdeling)
+                            <option value="{{$afdeling->id}}">{{$afdeling->naam}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -23,9 +23,10 @@
                 </div>
                 <div class="col-5">
                     <select name="budgethouder_naam" id="budgethouder_naam" class="form-select" aria-label="Default select example">
-                        <option value="budgethouder1">Budgethouder1</option>
-                        <option value="budgethouder2">Budgethouder2</option>
-                        <option value="budgethouder3">Budgethouder3</option>
+                    @foreach($budgethouders as $budgethouder)
+                        {{-- GAORG_langNr = placeholder! should be ga_orgs.naam --}}
+                        <option value="{{$budgethouder->id}}">{{$budgethouder->GOARG_langNr}}</option>
+                    @endforeach
                     </select>
                 </div>
             </div>
@@ -36,9 +37,9 @@
                 </div>
                 <div class="col-5">
                     <select name="kostenplaats_type" id="kostenplaats_type" class="form-select" aria-label="Default select example">
-                        <option value="betrekking1">Betrekking1</option>
-                        <option value="betrekking2">Betrekking2</option>
-                        <option value="betrekking3">Betrekking3</option>
+                        @foreach($kostenplaatstypes as $kostenplaatstype)
+                            <option value="{{$kostenplaatstype->id}}">{{$kostenplaatstype->omschrijving}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -49,13 +50,14 @@
                 </div>
                 <div class="col-5">
                     <select name="kostenplaats_naam" id="kostenplaats_naam" class="form-select" aria-label="Default select example">
-                        <option value="kostenplaats1">
-                            {{-- value="$kostenplaats->id" --}}
-                            {{-- $kostenplaats->id .'-'. $kostenplaats->naam --}}
+                        {{-- <option value="kostenplaats1">
+                            value="$kostenplaats->id"
+                            $kostenplaats->id .'-'. $kostenplaats->naam
                             Kostenplaats1
-                        </option>
-                        <option value="kostenplaats2">Kostenplaats2</option>
-                        <option value="kostenplaats3">Kostenplaats3</option>
+                        </option> --}}
+                        @foreach($kostenplaatsen as $kostenplaats)
+                            <option value="{{$kostenplaats->id}}">{{$kostenplaats->beschrijving}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -66,13 +68,14 @@
                 </div>
                 <div class="col-5">
                     <select name="categorie_naam" id="categorie_naam" class="form-select" aria-label="Default select example">
-                        {{-- foreach() --}}
+                        {{-- foreach()
                         <option value="categorie1">
                             Categorie1
-                            {{-- economische_categorie --}}
-                        </option>
-                        <option value="categorie2">Categorie2</option>
-                        <option value="categorie3">Categorie3</option>
+                            economische_categorie
+                        </option> --}}
+                        @foreach($categorieen as $categorie)
+                            <option value="{{$categorie->id}}">{{$categorie->beschrijving}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -83,10 +86,9 @@
                 </div>
                 <div class="col-5">
                     <select name="kostensoort" id="kostensoort" class="form-select" aria-label="Default select example">
-                        <option value="kostensoort1">Kostensoort1</option>
-                        {{-- hoofdrekeningnummer --}}
-                        <option value="kostensoort2">Kostensoort2</option>
-                        <option value="kostensoort3">Kostensoort3</option>
+                        @foreach($kostensoorten as $kostensoort)
+                            <option value="{{$kostensoort->id}}">{{$kostensoort->beschrijving}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

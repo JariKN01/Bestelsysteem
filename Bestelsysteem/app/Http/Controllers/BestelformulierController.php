@@ -4,7 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Afdeling;
 use App\Models\Bestelformulier;
+use App\Models\KostenplaatsType;
+use App\Models\Kostenplaats;
+use App\Models\EconomischeCategorie;
+use App\Models\Hoofdrekening;
 use App\Models\E1RspKpl2018;
+use App\Models\GaOrg;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -23,9 +28,15 @@ class BestelformulierController extends Controller
      */
     public function create()
     {
-        $users = User::all(); // Fetches all users
+        // Must join users and ga_orgs table to get role + name + id
+        // $budgethouders = User::where('role', "budgethouder")->get();
+        $budgethouders = User::join('GaOrgs', 'Users.GOARG_langNr', '=', 'GaOrgs.langNr')->get();
         $afdelingen = Afdeling::all();
-        return view('bestelformulier', compact('afdelingen','users'));
+        $kostenplaatstypes = KostenplaatsType::all();
+        $kostenplaatsen = Kostenplaats::all();
+        $categorieen = EconomischeCategorie::all();
+        $kostensoorten = Hoofdrekening::all();
+        return view('bestelformulier', compact('afdelingen','budgethouders', 'kostenplaatstypes', 'kostenplaatsen', 'categorieen', 'kostensoorten'));
     }
 
     /**

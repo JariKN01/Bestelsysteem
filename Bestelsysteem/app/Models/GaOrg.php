@@ -16,8 +16,7 @@ class GaOrg extends Model
         'naam',
         'departement',
         'titel',
-        'bedrijf',
-        'afdelings_id'
+        'bedrijf'
     ];
 
     public function adres()
