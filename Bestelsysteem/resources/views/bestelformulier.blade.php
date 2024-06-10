@@ -111,7 +111,7 @@
                     <label>Fio-route</label>
                 </div>
                 <div class="col-5">
-                    <select name="fio_route" id="fio_route" class="form-select" aria-label="Default select example">
+                    <select name="fio_routes_id" id="fio_routes_id" class="form-select" aria-label="Default select example">
                         @foreach($fio_routes as $fio_route)
                             <option value="{{$fio_route->id}}">{{$fio_route->beschrijving}}</option>
                         @endforeach
@@ -165,7 +165,7 @@
                 <div class="col-5 text-end">
                     <label>EnterpriseOne Nummer</label>
                 </div>
-                <input type="text" name="enterprise_one_nummer" id="enterprise_one_nummer">
+                <input type="text" name="enterprise_one_number" id="enterprise_one_number">
             </div>
             <div class="form-group">
                 <div class="col-5 text-end">

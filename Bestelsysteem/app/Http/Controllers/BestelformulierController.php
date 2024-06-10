@@ -67,7 +67,7 @@ class BestelformulierController extends Controller
 //      $request->merge(['rspkpl_id' => $rspkpl->id]);
 
 //        dd($request->all());
-        $bestelformulier->fio_routes_id = 1;
+        $bestelformulier->fio_routes_id = $request->input('fio_routes_id');
         $bestelformulier->werkorders_id = 1;
         $bestelformulier->adres_id = 1;
         $bestelformulier->bedrag = (double)$request->input('bedrag');
@@ -75,7 +75,8 @@ class BestelformulierController extends Controller
         // $bestelformulier->bedrag_bestelbon = $request->input('bedrag_bestelbon');
         $bestelformulier->korte_omschrijving = $request->input('korte_omschrijving');
         $bestelformulier->leverdatum = $request->input('leverdatum');
-        $request->input('enterpise_one_number') ? $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number') : $bestelformulier->enterprise_one_number = false;
+//        $request->input('enterpise_one_number') ? $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number') : $bestelformulier->enterprise_one_number = false;
+        $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number');
         $bestelformulier->naam_leverancier = $request->input('naam_leverancier');
         $bestelformulier->adres_leverancier = $request->input('adres_leverancier');
         $bestelformulier->plaats_leverancier = $request->input('plaats_leverancier');
