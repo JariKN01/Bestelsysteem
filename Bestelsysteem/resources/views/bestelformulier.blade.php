@@ -23,10 +23,10 @@
                 </div>
                 <div class="col-5">
                     <select name="budgethouder_naam" id="budgethouder_naam" class="form-select" aria-label="Default select example">
-                    @foreach($budgethouders as $budgethouder)
-                        {{-- GAORG_langNr = placeholder! should be ga_orgs.naam --}}
-                        <option value="{{$budgethouder->id}}">{{$budgethouder->GOARG_langNr}}</option>
-                    @endforeach
+                        @foreach($budgethouders as $budgethouder)
+                            {{-- GAORG_langNr = placeholder! should be ga_orgs.naam --}}
+                            <option value="{{$budgethouder->id}}">{{$budgethouder->GOARG_langNr}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -99,9 +99,9 @@
                 </div>
                 <div class="col-5">
                     <select name="kostencode" id="kostencode" class="form-select" aria-label="Default select example">
-                        <option value="kostencode1">Kostencode1</option>
-                        <option value="kostencode2">Kostencode2</option>
-                        <option value="kostencode3">Kostencode3</option>
+                        @foreach($kostencodes as $kostencode)
+                            <option value="{{$kostencode->id}}">{{$kostencode->description}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -112,9 +112,9 @@
                 </div>
                 <div class="col-5">
                     <select name="fio_route" id="fio_route" class="form-select" aria-label="Default select example">
-                        <option value="fio1">Fio1</option>
-                        <option value="fio2">Fio2</option>
-                        <option value="fio3">Fio3</option>
+                        @foreach($fio_routes as $fio_route)
+                            <option value="{{$fio_route->id}}">{{$fio_route->beschrijving}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

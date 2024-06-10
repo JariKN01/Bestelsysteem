@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Afdeling;
 use App\Models\Bestelformulier;
+use App\Models\FioRoute;
 use App\Models\KostenplaatsType;
 use App\Models\Kostenplaats;
 use App\Models\EconomischeCategorie;
 use App\Models\Hoofdrekening;
 use App\Models\E1RspKpl2018;
 use App\Models\GaOrg;
+use App\Models\Subrekening;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -36,12 +38,14 @@ class BestelformulierController extends Controller
         $kostenplaatsen = Kostenplaats::all();
         $categorieen = EconomischeCategorie::all();
         $kostensoorten = Hoofdrekening::all();
-        return view('bestelformulier', compact('afdelingen','budgethouders', 'kostenplaatstypes', 'kostenplaatsen', 'categorieen', 'kostensoorten'));
+        $kostencodes = Subrekening::all();
+        $fio_routes = FioRoute::all();
+        return view('bestelformulier', compact('afdelingen','budgethouders', 'kostenplaatstypes', 'kostenplaatsen', 'categorieen', 'kostensoorten', 'kostencodes', 'fio_routes'));
     }
 
     /**
      * Store a newly created resource in storage.
-     * 
+     *
      * .
      */
     public function store(Request $request)
@@ -50,7 +54,7 @@ class BestelformulierController extends Controller
 
         // Add RSPKPL to the request
         // $rspkpl = Rspkpl::
-    //                 where('kosten_plaats_id', $request->kostenplaats_naam) //Yep deze logica is questionable
+        //                 where('kosten_plaats_id', $request->kostenplaats_naam) //Yep deze logica is questionable
         //             ->where('hoofd_rekening_id', $request->kostensoort)
         //             // ->where('sub_rekening_id', $request->vraag7) Waarom is deze commented
         //             ->first();
