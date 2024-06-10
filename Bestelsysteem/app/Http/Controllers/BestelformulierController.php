@@ -54,6 +54,7 @@ class BestelformulierController extends Controller
 
         $bestelformulier->e1_rsp_kpl2018s_id = 1; // $request->input('kostenplaats'); //Dit moet uitgebreid worden om 3 vragen input te nemen
 
+
         // Add RSPKPL to the request
 //        $rspkpl = Rspkpl::where('kosten_plaats_id', $request->vraag4)
 //            ->where('hoofd_rekening_id', $request->vraag6)
