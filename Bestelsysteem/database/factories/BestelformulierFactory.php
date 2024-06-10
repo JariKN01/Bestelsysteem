@@ -32,7 +32,7 @@ class BestelformulierFactory extends Factory
             'plaats_leverancier' => $this->faker->country(),
             'postcode_leverancier' => $this->faker->randomNumber(3),
             'kvk_nummer' => $this->faker->randomNumber(6),
-            'omschrijving' => $this->faker->text(50),
+//            'omschrijving' => $this->faker->text(50),
         ];
     }
 }
