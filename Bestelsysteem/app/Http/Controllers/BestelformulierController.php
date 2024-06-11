@@ -22,7 +22,9 @@ class BestelformulierController extends Controller
      */
     public function index()
     {
-        //
+        $bestelformulieren = Bestelformulier::all();
+
+        return view('bestelligen.index', ['bestelformulieren' => $bestelformulieren]);
     }
 
     /**
@@ -89,15 +91,18 @@ class BestelformulierController extends Controller
         // dd($bestelformulier);
         $bestelformulier->save();
 
-        return redirect()->back();
+        return redirect()->route('home');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Bestelformulier $bestelformulier)
+    public function show(Bestelformulier $bestelformulier, $id)
     {
-        //
+        $bestelformulier = Bestelformulier::findOrFail($id);
+        $afdeling = Afdeling::find($bestelformulier->afdeling_id);
+
+        return view('bestelligen.show', ['bestelformulier' => $bestelformulier, 'afdeling' => $afdeling]);
     }
 
     /**

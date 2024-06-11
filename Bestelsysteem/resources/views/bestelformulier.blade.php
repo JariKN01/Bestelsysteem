@@ -208,25 +208,25 @@
                     document.getElementById('kvk_nummer').disabled = checked;
                 }
             </script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{--            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}
 
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#afdeling_naam').change(function() {
-                        var id = $(this).val();
-                        $.ajax({
-                            url: "{{ url('getBudgetHouders') }}/"+id,
-                            method: "GET",
-                            success: function(data) {
-                                $('#budgethouder_naam').empty();
-                                $.each(data, function(key, value) {
-                                    $('#budgethouder_naam').append('<option value="'+value.id+'">'+value.GOARG_langNr+'</option>');
-                                });
-                            }
-                        });
-                    });
-                });
-            </script>
+            {{--            <script type="text/javascript">--}}
+            {{--                $(document).ready(function() {--}}
+            {{--                    $('#afdeling_naam').change(function() {--}}
+            {{--                        var id = $(this).val();--}}
+            {{--                        $.ajax({--}}
+            {{--                            url: "{{ url('getBudgetHouders') }}/"+id,--}}
+            {{--                            method: "GET",--}}
+            {{--                            success: function(data) {--}}
+            {{--                                $('#budgethouder_naam').empty();--}}
+            {{--                                $.each(data, function(key, value) {--}}
+            {{--                                    $('#budgethouder_naam').append('<option value="'+value.id+'">'+value.GOARG_langNr+'</option>');--}}
+            {{--                                });--}}
+            {{--                            }--}}
+            {{--                        });--}}
+            {{--                    });--}}
+            {{--                });--}}
+            {{--            </script>--}}
             <div class="buttons my-2 mx-auto col-4">
                 <button type="button" class="rounded bg-white bg-opacity-100 col-4 border border-primary border-opacity-50 bg-gradient shadow-sm me-3 text-center p-2"><b>Annuleren</b></button>
                 <button type="submit" class="text-white rounded bg-primary bg-opacity-75 col-4 border border-primary border-opacity-50 bg-gradient shadow-sm text-center p-2"><b>Accepteren</b></button>

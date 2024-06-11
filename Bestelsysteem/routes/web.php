@@ -9,6 +9,7 @@ use App\Http\Controllers\AfdelingController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\GaOrgController;
 
+
 Route::get('/', function () {return view('home');})->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
@@ -35,6 +36,9 @@ Route::delete('/gebruikersbeheer/{id}', [UserController::class, 'delete'])->name
 Route::get('getBudgetHouders/{id}', [AfdelingController::class, 'getBudgetHouders']);
 
 Route::get('/gebruikersbeheer', [UserController::class, 'showGebruikersbeheer'])->name('gebruikersbeheer');
+
+Route::get('/bestellingen', [BestelformulierController::class, 'index']);
+Route::get('/bestellingen/{id}', [BestelformulierController::class, 'show'])->name('bestellingen.show');
 
 //Route::get('/afdeling', [AfdelingController::class, 'index'])->name('afdeling');
 //Route::get('/categorie', [CategorieController::class, 'index'])->name('categorie');

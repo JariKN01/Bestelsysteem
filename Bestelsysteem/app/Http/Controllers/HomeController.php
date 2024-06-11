@@ -27,4 +27,10 @@ class HomeController extends Controller
         $bestellingen = Bestelformulier::all();
         return view('home', compact('bestellingen'));
     }
+    public function showBestellingsoverzicht()
+    {
+        $bestellingen = Bestelformulier::all();
+
+        return view('bestellingsoverzicht', ['bestellingen' => $bestellingen]);
+    }
 }
