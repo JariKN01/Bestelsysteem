@@ -19,7 +19,7 @@ class KostenplaatsFactory extends Factory
         return [
             'kostenplaats_type_id' => 1,
             'ga_orgs_id' => 1,
-            'beschrijving' => $this->faker->sentence,
+            'beschrijving' => $this->faker->randomElement(['100262', '100103', '100275', '100278', '100387', '100417', '100395', '100509', '100519']),
             'bkcd' => $this->faker->word,
             'gerelateerd' => $this->faker->word,
         ];

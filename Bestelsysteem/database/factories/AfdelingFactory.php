@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class AfdelingFactory extends Factory
 {
     protected $model = Afdeling::class;
+
     /**
      * Define the model's default state.
      *
@@ -19,7 +20,7 @@ class AfdelingFactory extends Factory
     public function definition(): array
     {
         return [
-            'naam' => $this->faker->word,
+            'naam' => $this->faker->randomElement(['Stadsbedrijf', 'Werk & Inkomen', 'Stadsruimte', 'Financiën en Control', 'Vergunning verlening& Toezicht en Handhaving', 'Bestuur& Veiligheid& Leefbaarheid & Strategie'])
         ];
     }
 }

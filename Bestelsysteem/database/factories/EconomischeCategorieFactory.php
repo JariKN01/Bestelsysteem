@@ -18,7 +18,7 @@ class EconomischeCategorieFactory extends Factory
     {
         return [
             'economische_categorie' => $this->faker->word,
-            'beschrijving' => $this->faker->sentence,
+            'beschrijving' => $this->faker->randomElement(['L3.8', 'L6.1', 'B6.1', 'B7.5', 'L7.5', 'B7.5', 'B7.5', 'L3.2']),
         ];
     }
 }

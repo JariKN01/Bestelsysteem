@@ -17,8 +17,8 @@ class SubrekeningFactory extends Factory
     public function definition(): array
     {
         return [
-            'nummer' => $this->faker->numberBetween($min = 1000, $max = 9000),
-            'description' => $this->faker->sentence,
+            'nummer' => $this->faker->randomElement(['222', '304', '612', '01111', '01121', '01211', '01131', '01291', '01291A']),
+            'description' => $this->faker->randomElement(['222', '304', '612', '01111', '01121', '01211', '01131', '01291', '01291A']),
         ];
     }
 }

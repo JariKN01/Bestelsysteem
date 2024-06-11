@@ -19,7 +19,7 @@ class HoofdrekeningFactory extends Factory
         return [
             'economische_categories_id' => 1,
             'hoofd_rekening' => $this->faker->unique()->regexify('[A-Za-z0-9]{8}'),
-            'beschrijving' => $this->faker->sentence,
+            'beschrijving' => $this->faker->randomElement(['4300', '4715', '8715', '8799A', '4799', '8799', '8799I', '8799V', '4033']),
         ];
     }
 }

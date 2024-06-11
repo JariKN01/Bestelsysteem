@@ -19,7 +19,7 @@ class FioRouteFactory extends Factory
         return [
             'adres_id' => 1,
             'routing_code' => fake()->postcode(),
-            'beschrijving' => fake()->postcode(),
+            'beschrijving' => fake()->randomElement(['ACF Regionaal Ros a.i./Smits', 'BU Belastingen Wormer/Dasia', 'BVLS Morée /Kleiman', 'BVLS Internationaal via Mulder', 'BVLS Gispen/Zeeuw van der', 'CRN Locher/Schippers', 'CRN VIA Niemeijer/Pluijmaekers', 'EOG Put/Frietman']),
             'bedrijf' => fake()->postcode(),
             'naam' => fake()->postcode(),
             'CatCd1' => fake()->postcode(),

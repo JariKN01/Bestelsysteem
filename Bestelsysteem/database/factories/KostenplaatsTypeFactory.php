@@ -18,7 +18,7 @@ class KostenplaatsTypeFactory extends Factory
     {
         return [
             'code' => fake()->postcode(),
-            'omschrijving' => $this->faker->sentence,
+            'omschrijving' => $this->faker->randomElement(['Gronden en terreinen', 'Bedrijfsgebouwen', 'Aankoopcentrale Exploitatie', 'GREX-Archeologisch Onderzoek', 'Voorziening Onderhoud', 'Projectadministratie', 'Subsidies', 'MVA Machines en Installaties']),
             'opmerking' => $this->faker->sentence,
         ];
     }
