@@ -46,4 +46,9 @@ class GaOrg extends Model
     {
         return $this->belongsTo(Kostenplaats::class,'GOARG_langNr','langNr');
     }
+    public function gaOrg()
+    {
+        return $this->belongsTo(GaOrg::class);
+    }
+
 }

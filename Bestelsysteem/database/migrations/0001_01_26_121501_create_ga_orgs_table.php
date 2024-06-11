@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('ga_orgs', function (Blueprint $table) {
             $table->id();
-            $table->string('langNr');
-            $table->unsignedBigInteger('afdelings_id');
+            $table->string('langNr')->unique(); // Create 'langNr' column and make it unique
+            $table->unsignedBigInteger('afdelings_id')->nullable();
             $table->string('naam');
             $table->string('departement');
-            $table->string('titel');
-            $table->string('bedrijf');
+            $table->string('titel')->default('default value')->nullable();
+            $table->string('bedrijf')->default('default value')->nullable();
             $table->timestamps();
 
             $table->foreign('afdelings_id')->references('id')->on('afdelings')->onDelete('cascade');

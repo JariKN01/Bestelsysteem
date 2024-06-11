@@ -49,11 +49,16 @@ class User extends Authenticatable
         ];
     }
 
-    public function gaorg()
-    {
-        return $this->belongsTo(GaOrg::class, 'GOARG_langNr','langNr');
-    }
+//    public function gaorg()
+//    {
+//        return $this->belongsTo(GaOrg::class, 'GOARG_langNr','langNr');
+//    }
     public function afdeling(){
         return $this->belongsTo(Afdeling::class); // Assuming the foreign key in the users table is 'afdeling_id'
     }
+    public function gaOrg()
+    {
+        return $this->belongsTo(GaOrg::class, 'GOARG_langNr', 'langNr');
+    }
+
 }
