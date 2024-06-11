@@ -18,6 +18,6 @@ class UserSeeder extends Seeder
             'password' => bcrypt('secret'),
         ]);
 
-        $user->roles()->attach(1);
+//        $user->roles()->attach(1);
     }
 }
