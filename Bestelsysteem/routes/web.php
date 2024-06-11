@@ -30,5 +30,7 @@ Route::get('/databasebeheer/categorie', function () {return view('categorie');})
 Route::put('/gebruikersbeheer/update', [UserController::class, 'update'])->name('users.update');
 Route::delete('/gebruikersbeheer/{id}', [UserController::class, 'delete'])->name('users.delete');
 
+
+Route::get('getBudgetHouders/{id}', [AfdelingController::class, 'getBudgetHouders']);
 //Route::get('/afdeling', [AfdelingController::class, 'index'])->name('afdeling');
 //Route::get('/categorie', [CategorieController::class, 'index'])->name('categorie');
