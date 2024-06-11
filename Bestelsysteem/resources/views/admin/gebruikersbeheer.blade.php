@@ -36,8 +36,10 @@
                 <li class="mx-auto col-12 col-sm-10 rounded d-flex justify-content-evenly">
                     <h4 class="col-2 fw-semibold">Rol</h4>
                     <h4 class="col-2 fw-semibold">LangNr</h4>
-                    <h4 class="col-2 fw-semibold">Email</h4>
-                    <h4 class="col-2 fw-semibold">Geüpdatet</h4>
+                    <h4 class="col-3 fw-semibold">Email</h4>
+{{--                    <h4 class="col-2 fw-semibold">Geüpdatet</h4>--}}
+                    <h4 class="col-3 fw-semibold">Naam</h4>
+                    <h4 class="col-2 fw-semibold">Afdeling</h4>
                 </li>
                 @forelse($users as $user)
                     <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly my-2 user-item" data-bs-toggle="modal" data-bs-target="#popup" data-user="{{ json_encode($user) }}"
@@ -45,11 +47,16 @@
                         data-user-role="{{ $user->role }}"
                         data-user-langnr="{{ $user->GOARG_langNr }}"
                         data-user-email="{{ $user->email }}"
-                        data-user-updated="{{ $user->updated_at }}">
+                        data-user-updated="{{ $user->updated_at }}"
+                        data-user-naam="{{ optional($user->gaOrg)->naam }}"
+                        data-user-departement="{{ optional($user->gaOrg)->departement }}">
+
                         <p class="mt-0 mb-0 col-2">{{ $user->role }}</p>
                         <p class="mt-0 mb-0 col-2">{{ $user->GOARG_langNr }}</p>
-                        <p class="mt-0 mb-0 col-2">{{ $user->email }}</p>
-                        <p class="mt-0 mb-0 col-2">{{ $user->updated_at }}</p>
+                        <p class="mt-0 mb-0 col-3">{{ $user->email }}</p>
+{{--                        <p class="mt-0 mb-0 col-2">{{ $user->updated_at }}</p>--}}
+                        <p class="mt-0 mb-0 col-3">{{ optional($user->gaOrg)->naam }}</p>
+                        <p class="mt-0 mb-0 col-2">{{ optional($user->gaOrg)->departement }}</p>
                     </li>
 
                 @empty
@@ -83,6 +90,14 @@
                         <div class="mb-3">
                             <label for="GOARG_langNr" class="form-label">LangNr</label>
                             <input type="text" class="form-control" name="GOARG_langNr" id="popupuserlangnr">
+                        </div>
+                        <div class="mb-3">
+                            <label for="naam" class="form-label">Naam</label>
+                            <input type="text" class="form-control" name="naam" id="popupusernaam">
+                        </div>
+                        <div class="mb-3">
+                            <label for="departement" class="form-label">Afdeling</label>
+                            <input type="text" class="form-control" name="departement" id="popupuserdepartement">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -121,28 +136,29 @@
                     .catch(error => console.error('Error:', error));
             }
         });
-
-        function searchUsers() {
-            var input, filter, ul, li, p, i, txtValue;
-            input = document.getElementById('zoekbalk');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("userList");
-            li = ul.getElementsByTagName('li');
-
-            for (i = 0; i < li.length; i++) {
-                p = li[i].getElementsByTagName("p")[0]; // Assuming the first <p> element contains the user role
-                txtValue = p.textContent || p.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
     </script>
-{{--    @foreach($users as $user)--}}
-{{--        <li>--}}
-{{--            Department: {{ $user->gaorgs->naam }}--}}
-{{--        </li>--}}
-{{--    @endforeach--}}
+    <script>
+        $(document).ready(function() {
+            $('#budgethouder_naam').change(function() {
+                var langNr = $(this).val();
+                $.ajax({
+                    url: "/ga-org/naam/" + langNr,
+                    method: "GET",
+                    success: function(data) {
+                        if (data.naam) {
+                            // Toon de naam in een HTML-element met id 'naam'
+                            $('#naam').text(data.naam);
+                        } else {
+                            // Toon een foutbericht als er geen naam is gevonden
+                            $('#naam').text('Geen naam gevonden voor langNr: ' + langNr);
+                        }
+                    },
+                    error: function() {
+                        // Toon een foutbericht als het verzoek mislukt
+                        $('#naam').text('Er is een fout opgetreden bij het ophalen van de naam.');
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
