@@ -99,10 +99,11 @@
                 </div>
                 <div class="col-5">
                     <select name="kostencode" id="kostencode" class="form-select" aria-label="Default select example">
-                        <option value="kostencode1">Kostencode1</option>
-                        <option value="kostencode2">Kostencode2</option>
-                        <option value="kostencode3">Kostencode3</option>
-                    </select>
+                        <select name="kostensoort" id="kostensoort" class="form-select" aria-label="Default select example">
+                            @foreach($kostencodes as $kostencode)
+                                <option value="{{$kostencode->id}}">{{$kostencode->description}}</option>
+                            @endforeach
+                        </select>
                 </div>
             </div>
 

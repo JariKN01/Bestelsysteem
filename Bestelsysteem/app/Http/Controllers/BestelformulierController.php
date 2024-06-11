@@ -8,6 +8,7 @@ use App\Models\KostenplaatsType;
 use App\Models\Kostenplaats;
 use App\Models\EconomischeCategorie;
 use App\Models\Hoofdrekening;
+use App\Models\Subrekening;
 use App\Models\E1RspKpl2018;
 use App\Models\GaOrg;
 use App\Models\User;
@@ -36,7 +37,8 @@ class BestelformulierController extends Controller
         $kostenplaatsen = Kostenplaats::all();
         $categorieen = EconomischeCategorie::all();
         $kostensoorten = Hoofdrekening::all();
-        return view('bestelformulier', compact('afdelingen','budgethouders', 'kostenplaatstypes', 'kostenplaatsen', 'categorieen', 'kostensoorten'));
+        $kostencodes = Subrekening::all();
+        return view('bestelformulier', compact('afdelingen','budgethouders', 'kostenplaatstypes', 'kostenplaatsen', 'categorieen', 'kostensoorten', 'kostencodes'));
     }
 
     /**
