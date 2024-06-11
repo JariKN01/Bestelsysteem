@@ -73,5 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('popupuserrole').value = userData.role;
         document.getElementById('popupuserlangnr').value = userData.GOARG_langNr;
         document.getElementById('popupuseremail').value = userData.email;
+        document.getElementById('popupusernaam').value = button.getAttribute('data-user-naam');
+        document.getElementById('popupuserdepartement').value = button.getAttribute('data-user-departement');
     });
 });

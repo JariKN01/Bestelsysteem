@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\GaOrg; // Importeer de GaOrg klasse
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -78,16 +79,41 @@ class UserController extends Controller
             'role' => 'required|string|max:255',
             'GOARG_langNr' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
+            'naam' => 'nullable|string|max:255',
+            'departement' => 'nullable|string|max:255',
+            'afdelings_id' => 'nullable|integer',
         ]);
 
         $user = User::findOrFail($request->id);
         $user->role = $request->role;
         $user->GOARG_langNr = $request->GOARG_langNr;
         $user->email = $request->email;
-        $user->save();
+
+        // Controleer of de gaOrg relatie bestaat
+        if ($user->gaOrg) {
+            $user->gaOrg->naam = $request->filled('naam') ? $request->naam : '';
+            $user->gaOrg->departement = $request->filled('departement') ? $request->departement : '';
+            $user->afdelings_id = $request->afdelings_id;
+            $user->gaOrg->save(); // Sla de wijzigingen op in de GaOrg tabel
+        } else {
+            // Maak een nieuwe GaOrg instantie en koppel deze aan de gebruiker
+            $gaOrg = new GaOrg([
+                'langNr' => $user->GOARG_langNr,
+                'naam' => $request->filled('naam') ? $request->naam : '',
+                'departement' => $request->filled('departement') ? $request->departement : '',
+                'afdelings_id' => $request->afdelings_id,
+                'titel' => $request->titel,
+            ]);
+            $gaOrg->save(); // Sla de nieuwe GaOrg instantie op
+            $user->gaOrg()->associate($gaOrg); // Koppel de nieuwe GaOrg instantie aan de gebruiker
+        }
+
+        $user->save(); // Sla de wijzigingen op in de User tabel
 
         return redirect()->back()->with('success', 'User updated successfully');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -107,5 +133,11 @@ class UserController extends Controller
         } else {
             // Handle user not found
         }
+    }
+    public function showGebruikersbeheer()
+    {
+        $users = User::with('gaOrg')->get(); // Haal alle User records op uit de database met hun bijbehorende GaOrg
+
+        return view('admin.gebruikersbeheer', compact('users'));
     }
 }
