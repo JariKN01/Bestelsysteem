@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Afdeling;
 use App\Models\Bestelformulier;
+use App\Models\FioRoute;
 use App\Models\KostenplaatsType;
 use App\Models\Kostenplaats;
 use App\Models\EconomischeCategorie;
@@ -38,32 +39,35 @@ class BestelformulierController extends Controller
         $categorieen = EconomischeCategorie::all();
         $kostensoorten = Hoofdrekening::all();
         $kostencodes = Subrekening::all();
-        return view('bestelformulier', compact('afdelingen','budgethouders', 'kostenplaatstypes', 'kostenplaatsen', 'categorieen', 'kostensoorten', 'kostencodes'));
+        $fio_routes = FioRoute::all();
+        return view('bestelformulier', compact('afdelingen','budgethouders', 'kostenplaatstypes', 'kostenplaatsen', 'categorieen', 'kostensoorten', 'kostencodes', 'fio_routes'));
     }
 
     /**
      * Store a newly created resource in storage.
-     * 
+     *
      * .
      */
     public function store(Request $request)
     {
         $bestelformulier = new Bestelformulier; //Geen idee maar dit klopt toch?
 
-        // Add RSPKPL to the request
-        // $rspkpl = Rspkpl::
-    //                 where('kosten_plaats_id', $request->kostenplaats_naam) //Yep deze logica is questionable
-        //             ->where('hoofd_rekening_id', $request->kostensoort)
-        //             // ->where('sub_rekening_id', $request->vraag7) Waarom is deze commented
-        //             ->first();
-
-        // if ($request->vraag7 != "null") {
-        //     $rspkpl = $rspkpl->where('sub_rekening_id', $request->vraag7)->first();
-        // }
-        // $request->merge(['rspkpl_id' => $rspkpl->id]);
-
         $bestelformulier->e1_rsp_kpl2018s_id = 1; // $request->input('kostenplaats'); //Dit moet uitgebreid worden om 3 vragen input te nemen
-        $bestelformulier->fio_routes_id = 1;
+
+
+        // Add RSPKPL to the request
+//        $rspkpl = Rspkpl::where('kosten_plaats_id', $request->vraag4)
+//            ->where('hoofd_rekening_id', $request->vraag6)
+//            // ->where('sub_rekening_id', $request->vraag7)
+//            ->first();
+//
+//        if ($request->vraag7 != "null") {
+//            $rspkpl = $rspkpl->where('sub_rekening_id', $request->vraag7)->first();
+//        }
+//      $request->merge(['rspkpl_id' => $rspkpl->id]);
+
+//        dd($request->all());
+        $bestelformulier->fio_routes_id = $request->input('fio_routes_id');
         $bestelformulier->werkorders_id = 1;
         $bestelformulier->adres_id = 1;
         $bestelformulier->bedrag = (double)$request->input('bedrag');
@@ -71,12 +75,13 @@ class BestelformulierController extends Controller
         // $bestelformulier->bedrag_bestelbon = $request->input('bedrag_bestelbon');
         $bestelformulier->korte_omschrijving = $request->input('korte_omschrijving');
         $bestelformulier->leverdatum = $request->input('leverdatum');
-        $request->input('enterpise_one_number') ? $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number') : $bestelformulier->enterprise_one_number = false;
-        $bestelformulier->naam_leverancier = "naam";//$request->input('naam_leverancier');
-        $bestelformulier->adres_leverancier = "adres";//$request->input('adres_leverancier');
-        $bestelformulier->plaats_leverancier = "plaats";//$request->input('plaats_leverancier');
-        $bestelformulier->postcode_leverancier = "postcode";//$request->input('postcode_leverancier');
-        $bestelformulier->kvk_nummer = "kvk nummer";//$request->input('kvk_nummer');
+//        $request->input('enterpise_one_number') ? $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number') : $bestelformulier->enterprise_one_number = false;
+        $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number');
+        $bestelformulier->naam_leverancier = $request->input('naam_leverancier');
+        $bestelformulier->adres_leverancier = $request->input('adres_leverancier');
+        $bestelformulier->plaats_leverancier = $request->input('plaats_leverancier');
+        $bestelformulier->postcode_leverancier = $request->input('postcode_leverancier');
+        $bestelformulier->kvk_nummer = $request->input('kvk_nummer');
         $bestelformulier->user_id = 1;
 
         // Hier nog alleen uitzoeken hoe je de ids krijgt via rskpl... we hebben de id's in html

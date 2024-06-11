@@ -33,11 +33,12 @@ return new class extends Migration
             $table->string('korte_omschrijving')->default('');
             $table->date('leverdatum')->useCurrent();
             $table->string('enterprise_one_number');
-            $table->string('naam_leverancier');
-            $table->string('adres_leverancier');
-            $table->string('plaats_leverancier');
-            $table->string('postcode_leverancier');
-            $table->string('kvk_nummer');
+
+            $table->string('naam_leverancier')->nullable();
+            $table->string('adres_leverancier')->nullable();
+            $table->string('plaats_leverancier')->nullable();
+            $table->string('postcode_leverancier')->nullable();
+            $table->string('kvk_nummer')->nullable();
             $table->timestamps();
         });
     }
