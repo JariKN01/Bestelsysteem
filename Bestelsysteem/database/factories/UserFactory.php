@@ -26,7 +26,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'GOARG_langNr' => $this->faker->randomElement(['Anthony Mitchell', 'John Wick', 'Luke Walker', 'Joseph Davis', 'Anthony Mitchell', 'Nicholas Ingram', 'Alexander Quinn', 'Victoria Martinez', 'Benjamin Walker', 'James Foster']),
+            'GOARG_langNr' => $this->faker->unique->name,//(['Anthony Mitchell', 'John Wick', 'Luke Walker', 'Joseph Davis', 'Anthony Mitchell', 'Nicholas Ingram', 'Alexander Quinn', 'Victoria Martinez', 'Benjamin Walker', 'James Foster']),
             'afdelings_id' => $this->faker->word,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),

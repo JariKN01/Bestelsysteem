@@ -40,6 +40,12 @@
             <form action="{{route('databasebeheer/upload')}}" method="POST">
                 @csrf
                 @method('POST')
+                <div class="input-group w-50 my-2 mx-auto">
+                    <label class="me-2" for="tabelselectie" name="tabelselectie"> Selecteer Tabel</label>
+                    <select id="tabelselectie"> 
+                        <option value="ga_org"> GA_ORG </option>
+                    </select>
+                </div>
                 <div class="input-group w-50 mx-auto">
                     <input type="file" class="form-control" id="file_input">
                     <button class="btn btn-primary border border-secondary border-opacity-25 bg-gradient shadow-sm text-center" type="submit" id="upload_knop">Upload</button>

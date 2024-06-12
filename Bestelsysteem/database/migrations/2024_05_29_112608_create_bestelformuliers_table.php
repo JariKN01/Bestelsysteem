@@ -31,7 +31,7 @@ return new class extends Migration
             $table->double('bedrag');
             $table->boolean('bedrag_bestelbon')->default(false);
             $table->string('korte_omschrijving')->default('');
-            $table->date('leverdatum')->useCurrent();
+            $table->date('leverdatum')->useCurrent()->nullable();
             $table->string('enterprise_one_number')->nullable();
 
             $table->string('naam_leverancier')->nullable();

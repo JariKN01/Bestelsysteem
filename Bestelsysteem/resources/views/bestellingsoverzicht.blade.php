@@ -10,19 +10,17 @@
             <h4 class="col-3 fw-semibold">Datum</h4>
             <h4 class="col-3 fw-semibold">Bestelling</h4>
             <h4 class="col-3 fw-semibold">Omschrijving</h4>
-            <h4 class="col-3 fw-semibold">Details</h4>
         </li>
 
-            @foreach($bestellingen as $bestelling)
-                <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly mb-2">
-                    <p class="mt-0 mb-0 col-3">{{$bestelling->updated_at}}</p>
-                    <p class="mt-0 mb-0 col-3">{{$bestelling->id}}</p>
-                    <p class="mt-0 mb-0 col-3">{{$bestelling->korte_omschrijving}}</p>
-                    <p class="mt-0 mb-0 col-3">
-                        <a href="{{ route('bestellingen.show', $bestelling->id) }}">Bekijk details</a>
-                    </p>
-                </li>
-            @endforeach
+        @foreach($bestellingen as $bestelling)
+        <a class="text-decoration-none text-black" href="{{ route('bestellingen.show', $bestelling->id) }}">
+            <li class="mx-auto col-12 col-sm-10 rounded bg-white border border-black shadow shadow-sm bg-gradient font-semibold d-flex justify-content-evenly mb-2">
+                <p class="mt-0 mb-0 col-3">{{$bestelling->updated_at->format('d-m-Y')}}</p>
+                <p class="mt-0 mb-0 col-3">{{$bestelling->id}}</p>
+                <p class="mt-0 mb-0 col-3">{{$bestelling->korte_omschrijving ? $bestelling->korte_omschrijving : "Geen"}}</p>
+            </li>
+        </a>
+        @endforeach
         @else
             <h5 class="pt-2"><b>Er zijn geen bestellingen gevonden voor deze gebruiker</b></h5>
         @endif

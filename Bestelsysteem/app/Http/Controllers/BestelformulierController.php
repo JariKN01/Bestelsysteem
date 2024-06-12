@@ -74,10 +74,9 @@ class BestelformulierController extends Controller
         $bestelformulier->adres_id = 1;
         $bestelformulier->bedrag = (double)$request->input('bedrag');
         $request->input('bedrag_bestelbon') ? $bestelformulier->bedrag_bestelbon = $request->input('bedrag_bestelbon') : $bestelformulier->bedrag_bestelbon = false;
-        // $bestelformulier->bedrag_bestelbon = $request->input('bedrag_bestelbon');
         $bestelformulier->korte_omschrijving = $request->input('korte_omschrijving');
+        $request->input('korte_omschrijving') ? $bestelformulier->korte_omschrijving = $request->input('korte_omschrijving') : $bestelformulier->korte_omschrijving = "";
         $bestelformulier->leverdatum = $request->input('leverdatum');
-//        $request->input('enterpise_one_number') ? $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number') : $bestelformulier->enterprise_one_number = false;
         $bestelformulier->enterprise_one_number = $request->input('enterprise_one_number');
         $bestelformulier->naam_leverancier = $request->input('naam_leverancier');
         $bestelformulier->adres_leverancier = $request->input('adres_leverancier');
